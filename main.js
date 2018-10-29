@@ -1,5 +1,6 @@
 //This is the basic command handler with included file examples. Ill work on it more a little later or tomorrow...its just placeholder for rn
 //-canarado uwu
+//if anyone works on this EVENTS MUST GO IN EVENTS DIR and COMMANDS MUST GO IN COMMANDS DIR
 
 const Discord = require("discord.js");
 const Enmap = require("enmap");
