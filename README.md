@@ -1,9 +1,9 @@
 # Coding-Yabe-Sei
 A multi-purpose discord bot that has, moderation, fun, games, and learning commands!
 
-TO DO LIST
+#TO DO LIST
 
--Make a proper README.md
--implement command handler
--add commands and events
--hosting
+- [x] Make a proper README.md
+- [ ] implement command handler
+- [ ] add commands and events
+- [ ] hosting
