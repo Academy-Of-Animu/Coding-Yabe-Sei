@@ -4,7 +4,7 @@ A multi-purpose discord bot that has, moderation, fun, games, and learning comma
 #TO DO LIST
 
 - [x] Make a proper README.md
-- [ ] implement command handler
+- [x] implement command handler
 - [ ] add commands and events
-- [ ] hosting
+- [x] hosting
 - [ ] add github pages
