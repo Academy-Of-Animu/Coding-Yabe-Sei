@@ -8,3 +8,9 @@ A multi-purpose discord bot that has, moderation, fun, games, and learning comma
 - [ ] add commands and events
 - [x] hosting
 - [ ] add github pages
+- [ ] finish modules
+  - [ ] learning
+  - [ ] fun
+  - [ ] games
+  - [ ] music
+  - [ ] random
