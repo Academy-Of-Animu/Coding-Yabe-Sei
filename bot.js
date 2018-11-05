@@ -29,4 +29,4 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-client.login("token");
+client.login(process.env.BOT_TOKEN);
