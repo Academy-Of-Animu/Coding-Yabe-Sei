@@ -7,7 +7,7 @@
     "start": "node bot.js"
   },
   "keywords": [],
-  "author": "Canarado",
+  "author": "Canarado-Illusion-Senpai",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
