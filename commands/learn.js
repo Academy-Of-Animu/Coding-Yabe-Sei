@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
+    /*
     const eclr = client.config.embedColor;
 
     if(args[0] === "langs") {
@@ -29,18 +30,47 @@ exports.run = (client, message, args) => {
 
             message.channel.send(embed)
         } else
-        if(args[1] === "syn") {
+        if(args[1] === "var") {
             let embed = new Discord.RichEmbed()
-            .setTitle("JavaScript Syntax")
-            .addField()
-        }
-        else {
-            let embed = new Discord.RichEmbed()
-            .addField("JavaScript", "With JavaScript, you currently can learn about:\n\nIf\/else if\/else statements(`if`)\nFunctions(`fn`)\n\nAccess these learning modules with `>learn js <learning module>`")
+            .addField("Variables in JavaScript", "```js\nvar x = 1;\nvar y = 1;\nvar z = x + y;\nconsole.log(z)\n\nOutput: 2\n```")
             .setColor(eclr)
 
             message.channel.send(embed)
         }
+        else {
+            let embed = new Discord.RichEmbed()
+            .addField("JavaScript", "With JavaScript, you currently can learn about:\n\nIf\/else if\/else statements(`if`)\nFunctions(`fn`)\nVariables(`var`)\n\nAccess these learning modules with `>learn js <learning module>`")
+            .setColor(eclr)
+
+            message.channel.send(embed)
+        }
+    } else
+    if(args[0] === "py") {
+        message.channel.send("This learning module is coming soon! -Adam")
+    } else
+    if(args[0] === "rb") {
+        message.channel.send("This learning module is coming soon! -Adam")
+    } else
+    if(args[0] === "c") {
+        message.channel.send("This learning module is coming soon! -Adam")
+    } else
+    if(args[0] === "cs") {
+        message.channel.send("This learning module is coming soon! -Adam")
+    } else
+    if(args[0] === "cpp") {
+        message.channel.send("This learning module is coming soon! -Adam")
+    } else
+    if(args[0] === "jv") {
+        message.channel.send("This learning module is coming soon! -Adam")
+    } else
+    if(args[0] === "php") {
+        message.channel.send("This learning module is coming soon! -Adam")
+    } else
+    if(args[0] === "sql") {
+        message.channel.send("This learning module is coming soon! -Adam")
+    } else
+    if(args[0] === "ml") {
+        message.channel.send("This learning module is coming soon! -Adam")
     }
     else {
         let embed = new Discord.RichEmbed()
@@ -52,4 +82,10 @@ exports.run = (client, message, args) => {
 
         message.channel.send(embed)
     }
+    */
+   let embed = new Discord.RichEmbed()
+   .setDescription('**Thank you for using Coding Yabe Sei\'s beta!**\nSadly, due to a heavy work load on the devs of Yabe *cough*, the learning feature of Yabe is not yet completed! You can expect a full release of Yabe in the near future, if you have any more questions please ask in our [Discord Server](https://discord.gg/Sc44knm). Thanks for giving us a chance, we hope you\'ll stick along.')
+   .setColor(client.config.embedColor)
+
+   message.channel.send(embed)
 }

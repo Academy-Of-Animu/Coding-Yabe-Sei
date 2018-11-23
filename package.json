@@ -1,16 +1,22 @@
 {
-  "name": "coding-yabe-sei",
-  "version": "0.1.0",
+  "name": "coding-yabei-sei",
+  "version": "1.0.0",
   "description": "",
   "main": "bot.js",
-  "scripts": {
-    "start": "node bot.js"
-  },
-  "keywords": [],
-  "author": "Canarado-Illusion-Senpai",
-  "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "enmap": "^4.3.3"
-  }
+    "enmap": "^4.3.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "8.12.0",
+    "npm": "6.4.1"
+  },
+  "keywords": [],
+  "author": "Canny-Illusion-Senpai",
+  "license": "ISC"
 }

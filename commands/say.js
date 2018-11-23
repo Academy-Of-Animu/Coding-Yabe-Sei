@@ -4,6 +4,6 @@ exports.run = (client, message, args) => {
         message.delete();
         message.channel.send(text);
     } else {
-        message.channel.send("Sorry, you can't use this command. Maybe ask your the leader for a promotion?");
+        message.channel.send("Sorry, you can't use this command. Either the `Mods` role does not exist or you are not a Mod ¯\_(ツ)_/¯");
     }
 }
