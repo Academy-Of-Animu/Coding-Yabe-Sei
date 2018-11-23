@@ -134,7 +134,7 @@ exports.run = (client, message, args) => {
     else {
     let embed = new Discord.RichEmbed()
     //.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
-    .addField("**Commands**", "List of all available commands\nFor additional help with a command, type `>help <command name>`")
+    .addField("**Commands**", "List of all available commands\nFor additional help with a command, type `>help <command name>`\nThank you for using the Yabe beta bot! We hope you will stick with us!")
     .addField("**Moderation** *`must have Mods role`*", "`say` `kick` `ban` `rem`")
     .setColor(eclr)
     .addField("**Fun**", "`meme` `poke` `slap`")
