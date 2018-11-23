@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
       emb.setColor(client.config.embedColor);
 
       let memberUsers = ""
-      if(memberNames.length > 10) {
+      if(memberNames.length > 50) {
         let embed = new Discord.RichEmbed()
         .setDescription(`Too many users to display: ${memberNames.length} users.`)
         .setColor(client.config.embedColor)
