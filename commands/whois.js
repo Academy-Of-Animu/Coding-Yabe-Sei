@@ -17,6 +17,14 @@ exports.run = (client, message, args) => {
       emb.setColor(client.config.embedColor);
 
       let memberUsers = ""
+      if(memberNames.length > 10) {
+        let embed = new Discord.RichEmbed()
+        .setDescription(`Too many users to display: ${memberNames.length} users.`)
+        .setColor(client.config.embedColor)
+
+        message.channel.send(embed)
+        return
+      } //return message.channel.send(`Too many users to display: ${memberNames.length} users`)
       for (member of memberNames){
           memberUsers += member.user.username + "\n"
       };
