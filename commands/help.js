@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     if(args[0] === "kick") {
         let embed = new Discord.RichEmbed()
         .addField("**Kick Command**", "The `>kick` command is tied to the `Mods` role. It allows you to kick a specified user.")
-        .addField("Usage", "`>kick <@user>`")
+        .addField("Usage", "`>kick <@user> <reason>(optional)`")
         .setColor(eclr)
 
         message.channel.send(embed)
