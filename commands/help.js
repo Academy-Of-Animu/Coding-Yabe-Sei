@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
     let eclr = client.config.embedColor;
     if(args[0] === "say") {
         let embed = new Discord.RichEmbed()
-        .addField("**Say Command**", "The `>say` command is tied to the `Mods` role. It allows you to make the bot say what you want.")
+        .addField("**Say Command**", "The `>say` command requires `Manage Server` permission. It allows you to make the bot say what you want.")
         .addField("Usage", "`>say <what you want the bot to say>`")
         .setColor(eclr)
 
@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
     } else
     if(args[0] === "kick") {
         let embed = new Discord.RichEmbed()
-        .addField("**Kick Command**", "The `>kick` command is tied to the `Mods` role. It allows you to kick a specified user.")
+        .addField("**Kick Command**", "The `>kick` command requires `Kick Members` permission. It allows you to kick a specified user.")
         .addField("Usage", "`>kick <@user> <reason>(optional)`")
         .setColor(eclr)
 
@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
     } else
     if(args[0] === "ban") {
         let embed = new Discord.RichEmbed()
-        .addField("**Ban Command**", "The `>ban` command is tied to the `Mods` role. It allows you to ban a specified user.")
+        .addField("**Ban Command**", "The `>ban` command requires `Ban Members` permission. It allows you to ban a specified user.")
         .addField("Usage", "`>ban <@user>`")
         .setColor(eclr)
 
@@ -101,7 +101,7 @@ exports.run = (client, message, args) => {
     } else
     if(args[0] === "rem") {
         let embed = new Discord.RichEmbed()
-        .addField('**Rem Command**', 'The `>rem` command removes a given amount of message, to clean up chats.')
+        .addField('**Rem Command**', 'The `>rem` command require the `Manage Messages` permission. It removes a given amount of message, to clean up chats.')
         .addField('Usage', '`>rem <amount of messages to be removed>`')
         .setColor(eclr)
 
@@ -135,7 +135,7 @@ exports.run = (client, message, args) => {
     let embed = new Discord.RichEmbed()
     //.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
     .addField("**Commands**", "List of all available commands\nFor additional help with a command, type `>help <command name>`\nThank you for using the Yabe beta bot! We hope you will stick with us!")
-    .addField("**Moderation** *`must have Mods role`*", "`say` `kick` `ban` `rem`")
+    .addField("**Moderation** *`each require certain perms`*", "`say` `kick` `ban` `rem`")
     .setColor(eclr)
     .addField("**Fun**", "`meme` `poke` `slap`")
     .addField("**Games**", "`placeholder`")
