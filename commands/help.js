@@ -130,17 +130,28 @@ exports.run = (client, message, args) => {
         .setColor(eclr)
 
         message.channel.send(embed)
+    }else
+    if(args[0] === "changelog") {
+        let embed = new Discord.RichEmbed()
+        .setTitle("**Changelog Command**")
+        .setDescription("The `>changelog` command displays an embed of latest changes to the bot")
+        .addField("Usage", "`>changelog`")
+        .setColor(eclr)
+        
+        message.channel.send(embed);
     }
     else {
     let embed = new Discord.RichEmbed()
     //.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
+    .setTitle("**Changelog**")
+    .setDescription("You can check the latest changes with `>changelog`")
     .addField("**Commands**", "List of all available commands\nFor additional help with a command, type `>help <command name>`\nThank you for using the Yabe beta bot! We hope you will stick with us!")
     .addField("**Moderation** *`each require certain perms`*", "`say` `kick` `ban` `rem`")
     .setColor(eclr)
     .addField("**Fun**", "`meme` `poke` `slap`")
     .addField("**Games**", "`placeholder`")
     .addField("**Learning**", "`>learn` to learn more! [coming soon, I promise]")
-    .addField("**Random**", "`ping` `help` `serverinfo` `info` `bug` `invite` `whois` `avatar`\n\n\n")
+    .addField("**Random**", "`ping` `help` `serverinfo` `info` `bug` `invite` `whois` `avatar` `changelog`")
     .setTimestamp()
     .setFooter("Created by Adam, Hesham and Marvin")
 
