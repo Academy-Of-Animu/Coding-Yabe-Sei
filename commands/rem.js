@@ -1,8 +1,7 @@
 exports.run = (client, message,args, tools) => {
-    let mod = message.guild.roles.find(role => role.name === "Mods");
     let userinp = parseInt(args[0], 10)
 
-    if(!message.member.roles.has(mod.id)) return message.reply('You are not allowed to use this command.');
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('You are not allowed to use this command.');
 
     if(isNaN(userinp)) return message.reply("Please supply a number of messages to delete.");
 
