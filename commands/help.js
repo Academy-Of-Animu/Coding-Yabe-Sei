@@ -133,8 +133,7 @@ exports.run = (client, message, args) => {
     }else
     if(args[0] === "changelog") {
         let embed = new Discord.RichEmbed()
-        .setTitle("**Changelog Command**")
-        .setDescription("The `>changelog` command displays an embed of latest changes to the bot")
+        .addField("**Changelog Command**", "The `>changelog` command displays an embed of latest changes to the bot")
         .addField("Usage", "`>changelog`")
         .setColor(eclr)
         
@@ -143,8 +142,7 @@ exports.run = (client, message, args) => {
     else {
     let embed = new Discord.RichEmbed()
     //.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
-    .setTitle("**Changelog**")
-    .setDescription("You can check the latest changes with `>changelog`")
+    .addField("**Changelog**", "You can check the latest changes with `>changelog`")
     .addField("**Commands**", "List of all available commands\nFor additional help with a command, type `>help <command name>`\nThank you for using the Yabe beta bot! We hope you will stick with us!")
     .addField("**Moderation** *`each require certain perms`*", "`say` `kick` `ban` `rem`")
     .setColor(eclr)
