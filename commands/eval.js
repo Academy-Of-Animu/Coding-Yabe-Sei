@@ -34,6 +34,6 @@ exports.run = (client, message, args) => {
         message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
       }
     } else {
-        return message.channel.send('Nice try, but I won\'t have that...');
+        return message.channel.send('```js\nNo Eval 4 U\n```');
     }
 }
