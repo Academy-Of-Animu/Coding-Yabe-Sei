@@ -34,6 +34,6 @@ exports.run = (client, message, args) => {
         message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
       }
     } else {
-        return message.channel.send('Code is being evaled in our server...join it to see your evaled code! <link will go here>');
+        return message.channel.send('```js\nNo Eval 4 U\n```');
     }
 }

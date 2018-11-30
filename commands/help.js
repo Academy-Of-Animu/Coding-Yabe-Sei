@@ -133,8 +133,7 @@ exports.run = (client, message, args) => {
     }else
     if(args[0] === "changelog") {
         let embed = new Discord.RichEmbed()
-        .setTitle("**Changelog Command**")
-        .setDescription("The `changelog` command displays an embed of latest changes to the bot")
+        .addField("**Changelog Command**", "The `changelog` command displays an embed of latest changes to the bot")
         .addField("Usage", "`yabe changelog`")
         .setColor(eclr)
         
@@ -142,8 +141,7 @@ exports.run = (client, message, args) => {
     }else
     if (args[0] === "translate") {
         let embed = new Discord.RichEmbed()
-        .setTitle("**Translate Command**")
-        .setDescription("The `translate` command translates any text from any given language to another")
+        .addField("**Translate Command**", "The `translate` command translates any text from any given language to another")
         .addField("Usage", "`yabe translate <source language>-<target language> <word or sentence to translate>`")
         .setFooter("Note: the languages need to be in ISO 639-1 code format")
         .setColor(eclr)
@@ -153,8 +151,7 @@ exports.run = (client, message, args) => {
     else {
     let embed = new Discord.RichEmbed()
     //.setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
-    .setTitle("**Changelog**")
-    .setDescription("You can check the latest changes with `yabe changelog`")
+    .addField("**Changelog**", "You can check the latest changes with `yabe changelog`")
     .addField("**Commands**", "List of all available commands\nFor additional help with a command, type `yabe help <command name>`\nThank you for using the Yabe beta bot! We hope you will stick with us!")
     .addField("**Moderation** *`each require certain perms`*", "`say` `kick` `ban` `rem`")
     .setColor(eclr)
