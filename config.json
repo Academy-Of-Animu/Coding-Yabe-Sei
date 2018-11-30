@@ -1,11 +1,11 @@
 {
-    "prefix": ">",
+    "prefix": "yabe ",
     "devs": {
         "canarado": "427491040468140043",
         "illusion": "407351772575694879",
         "senpai": "428678912558628865"
     },
     "embedColor": "0x1355A4",
-    "botVersion": "0.1.1",
+    "botVersion": "v0.2.0",
     "logChannel": "516054347008966667"
 }
