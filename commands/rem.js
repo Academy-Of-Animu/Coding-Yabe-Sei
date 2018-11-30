@@ -9,3 +9,9 @@ exports.run = (client, message,args, tools) => {
 
     message.channel.bulkDelete(userinp + 1).then(messages => console.log(`Bulk deleted ${messages.size} messages`)).catch(console.error);
 }
+
+exports.help = {
+    name: "rem",
+    description: "The `rem` command require the `Manage Messages` permission. It removes a given amount of message, to clean up chats.",
+    usage: "`yabe rem <amount of messages to be removed>`",
+}

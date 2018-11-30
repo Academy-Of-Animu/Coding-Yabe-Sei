@@ -7,3 +7,9 @@ exports.run = (client, message, args) => {
         message.channel.send("Sorry, you lack permissions to use this command. ¯\\_(ツ)_/¯");
     }
 }
+
+exports.help = {
+    name: "say",
+    description: "The `say` command requires `Manage Server` permission. It allows you to make the bot say what you want.",
+    usage: "`yabe say <what you want the bot to say>`",
+}

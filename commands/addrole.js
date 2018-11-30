@@ -8,3 +8,8 @@ exports.run = (client, message, args) => {
         message.delete();
     }, 5000 )
 }
+exports.help = {
+    name: "addrole",
+    description: "Allows bot to give you the provided role",
+    usage: "`yabe addrole <role's name>(case sensitive)`",
+}

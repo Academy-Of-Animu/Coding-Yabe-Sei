@@ -8,3 +8,9 @@ exports.run = (client, message, args) => {
 
     message.channel.send(embed)
 }
+
+exports.help = {
+    name: "invite",
+    description: "The `invite` command sends an instant invite for Yabe straight to your own server(s).",
+    usage: "`yabe invite`",
+}

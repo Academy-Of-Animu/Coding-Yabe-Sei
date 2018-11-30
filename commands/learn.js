@@ -89,3 +89,11 @@ exports.run = (client, message, args) => {
 
    message.channel.send(embed)
 }
+
+exports.help = {
+    name: "learn",
+    description: "Yabe-Sei will try to assist people with learning how to code and become good programmers.",
+    usage: "For starters, the command to initiate the learning mode for Yabe is `yabe learn`. You then add more arguments to that to learn more about specified things.\n" +
+            "**Examples:**\n" +
+            "The command to learn about an if statement in JavaScript would be `yabe learn js if`, or to learn about print statements in ruby, you would do `yabe learn rb print`.\n\nTo see what Yabe offers for each language, use `yabe learn <name of language>`\n\nUse `yabe learn langs` to view a list of languages.",
+}

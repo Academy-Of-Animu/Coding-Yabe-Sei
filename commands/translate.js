@@ -181,3 +181,9 @@ exports.run = (client, message, [args, ...words]) => {
         }
     })
 }
+
+exports.help = {
+    name: "translate",
+    description: "The `translate` command translates any text from any given language to another",
+    usage: "`yabe translate <source language>-<target language> <word or sentence to translate>`\nNote: the languages need to be in ISO 639-1 code format.",
+}

@@ -16,3 +16,9 @@ exports.run = (client, message, args) => {
     message.channel.send(emb)
     })
 }
+
+exports.help = {
+    name: "meme",
+    description: "The `meme` command displays a random meme from the interwebs.",
+    usage: "`yabe meme`",
+}

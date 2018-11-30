@@ -42,6 +42,12 @@ exports.run = (client, message) => {
         .addField("Roles", message.guild.roles.size, true)
         .addField("Channels", message.guild.channels.size, true)
         //.addField("Emojis", emojis, true)
-        .setColor(0x1355A4)
+        .setColor(client.config.embedColor)
         message.channel.send({embed});
+}
+
+exports.help = {
+    name: "serverinfo",
+    description: "The `serverinfo` command returns info about the current server, such as when it was created and the owner, etc.",
+    usage: "`yabe serverinfo`",
 }
