@@ -156,7 +156,7 @@ exports.run = (client, message, args) => {
     .addField("**Moderation** *`each require certain perms`*", "`say` `kick` `ban` `rem`")
     .setColor(eclr)
     .addField("**Fun**", "`meme` `poke` `slap`")
-    .addField("**Games**", "`placeholder`")
+    .addField("**Games**", "`games are coming very soon!`")
     .addField("**Learning**", "`yabe learn` to learn more! [coming soon, I promise]")
     .addField("**Random**", "`ping` `help` `serverinfo` `info` `bug` `invite` `whois` `avatar` `changelog`")
     .setTimestamp()
