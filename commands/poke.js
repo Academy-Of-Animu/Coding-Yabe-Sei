@@ -25,3 +25,9 @@ exports.run = (client, message, args) => {
 
     message.channel.send(embed)
 }
+
+exports.help = {
+    name: "poke",
+    description: "The `poke` command allows you to poke your friends!",
+    usage: "`yabe poke <person to poke>`",
+}

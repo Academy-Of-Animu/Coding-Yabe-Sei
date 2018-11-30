@@ -26,3 +26,9 @@ exports.run = (client, message, args) => {
 
     message.channel.send(embed)
 }
+
+exports.help = {
+    name: "slap",
+    description: "The `slap` command allows you to slap your friends to show your disdain for them! :)",
+    usage: "`yabe slap <person to slap>`",
+}

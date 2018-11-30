@@ -12,3 +12,9 @@ exports.run = (client, message, args) => {
 
     message.channel.send(embed)
 }
+
+exports.help = {
+    name: "info",
+    description: "The `info` command displays info about Yabe Sei, and the creators of Yabe.",
+    usage: "`yabe info",
+}

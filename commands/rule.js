@@ -5,3 +5,9 @@ exports.run = (client, message, args) => {
 }
 
 //going to allow mods to send an embed for cleaner looking rules and info templates
+
+exports.help = {
+    name: "rule",
+    description: "Coming soon!",
+    usage: "Comnig soon!",
+}

@@ -12,3 +12,9 @@ exports.run = (client, message, args) => {
     client.channels.get('505094982085115905').send(embed)
 
 }
+
+exports.help = {
+    name: "bug",
+    description: "The `bug` command allows the user to send a bug receipt to the developers of the bot.",
+    usage: "`yabe bug <bug message>`",
+}
