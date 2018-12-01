@@ -9,5 +9,5 @@ module.exports = (client) => {
     }, 20000)
     */
 
-    client.user.setActivity(`[BETA] yabe help | ${client.guilds.size} servers`, { type: 'PLAYING' });
+    client.user.setActivity(`yabe help | ${client.guilds.size} servers`, { type: 'PLAYING' });
 }
