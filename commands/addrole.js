@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
         message.delete();
     }, 5000 )
     } catch (err) {
-        console.log(`${roleSearch}`)
+        console.log(`some role couldnt be added`)
     }
 }
 exports.help = {
