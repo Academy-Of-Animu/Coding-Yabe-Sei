@@ -1,4 +1,5 @@
 exports.run = (client, message, args) => {
+    try {
     let roleSearch = args.join(" ")
     let roleToAdd = message.guild.roles.find(x => x.name === roleSearch)
 
@@ -7,6 +8,9 @@ exports.run = (client, message, args) => {
     setTimeout( () => {
         message.delete();
     }, 5000 )
+    } catch (err) {
+        console.log('somerole didnt exist')
+    }
 }
 exports.help = {
     name: "addrole",
