@@ -11,3 +11,9 @@ var milliseconds = parseInt((client.uptime % 1000) / 100),
 
       message.channel.send(":chart_with_upwards_trend: I've been running for** " + hours + " **hours, **" + minutes + "** minutes and **" + seconds + "." + milliseconds + "** seconds!");
 }
+
+exports.help = {
+    name: "uptime",
+    description: "Allows you to view how long Yabe has been running.",
+    usage: "`yabe uptime`",
+}
