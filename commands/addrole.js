@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
         message.delete();
     }, 5000 )
     } catch (err) {
-        console.log('somerole didnt exist')
+        console.log(`${roleSearch)`)
     }
 }
 exports.help = {
