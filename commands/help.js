@@ -3,6 +3,7 @@ const fs = require("fs");
 
 exports.run = (client, message, args) => {
     if (args[0]) {
+        if(args[0] === "eval") return message.channel.send('Temporary fix on that')
         fs.readdir("./commands/", (err, files) => {
             if (err) console.error(err);
 
