@@ -6,25 +6,29 @@ exports.run = (client, message, args) => {
         fs.readdir("./commands/", (err, files) => {
             if (err) console.error(err);
 
-            files.forEach(file => {
-                let commands = [];
-                let props = require(`./${file}`);
-                let cmdName = props.help.name;
-                let cmdDescription = props.help.description;
-                let cmdUsage = props.help.usage;
-                commands.push(cmdName);
+            try {
+                files.forEach(file => {
+                    let commands = [];
+                    let props = require(`./${file}`);
+                    let cmdName = props.help.name;
+                    let cmdDescription = props.help.description;
+                    let cmdUsage = props.help.usage;
+                    commands.push(cmdName);
 
-                if (commands.includes(args[0])) {
-                    if (args[0] == file.split('.')[0]) {
-                        const embed = new Discord.RichEmbed()
-                            .addField(`**${cmdName[0].toUpperCase() + cmdName.slice(1)} Command**`, cmdDescription)
-                            .addField('Usage', cmdUsage)
-                            .setColor(client.config.embedColor)
+                    if (commands.includes(args[0])) {
+                        if (args[0] == file.split('.')[0]) {
+                            const embed = new Discord.RichEmbed()
+                                .addField(`**${cmdName[0].toUpperCase() + cmdName.slice(1)} Command**`, cmdDescription)
+                                .addField('Usage', cmdUsage)
+                                .setColor(client.config.embedColor)
 
-                            message.channel.send(embed);
-                        }
-                }
-            });
+                                message.channel.send(embed);
+                            }
+                    }
+                });
+            } catch (err) {
+                message.channel.send("An error has occured while processing your request. if this persists send a bug report using `yabe bug`");
+            }
         });
     } else {
         const embed = new Discord.RichEmbed()
