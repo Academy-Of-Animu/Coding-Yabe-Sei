@@ -4,6 +4,7 @@ const osu = require('node-osu');
 var osuApi = new osu.Api(process.env.OSU_TOKEN);
 
 exports.run = (client, message, args) => {
+    try {
     osuApi.getUser({u: args.join(' ')}).then(user => {
         //console.log(user)
         const embed = new Discord.RichEmbed()
@@ -20,6 +21,9 @@ exports.run = (client, message, args) => {
             .addField("Rank S Plays", user.counts.S, true)
             .addField("Rank SS Plays", user.counts.SS, true);
         message.channel.send(embed);
+    } catch(err) {
+        console.log(`Error in Osu command: ${err}`)
+    }
 })}
 
 exports.help = {
