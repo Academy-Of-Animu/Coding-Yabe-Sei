@@ -39,7 +39,7 @@ exports.run = (client, message, args) => {
             .addField("**Fun**", "`meme` `poke` `slap`")
             .addField("**Games**", "`games are coming very soon!`")
             .addField("**Learning**", "`yabe learn` to learn more! [coming soon, I promise]")
-            .addField("**Random**", "`addrole` `ping` `help` `serverinfo` `info` `bug` `invite` `whois` `avatar` `changelog` `translate` `uptime` `osu`")
+            .addField("**Random**", "`roles` `roll` `addrole` `ping` `help` `serverinfo` `info` `bug` `invite` `whois` `avatar` `changelog` `translate` `uptime` `osu`")
             .setFooter("Created by Adam, Hesham and Marvin")
             .setTimestamp()
     
