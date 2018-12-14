@@ -28,6 +28,7 @@ exports.run = (client, message, args) => {
                 });
             } catch (err) {
                 message.channel.send("An error has occured while processing your request. if this persists send a bug report using `yabe bug`");
+                console.log(err)
             }
         });
     } else {
