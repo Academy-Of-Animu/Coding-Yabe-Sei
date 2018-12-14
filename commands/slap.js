@@ -19,16 +19,32 @@ exports.run = (client, message, args) => {
         return
     }
 
+    if(personslap.id === message.author.id) {
+        let personslap = 'they own damn selves'
+        let embed = new Discord.RichEmbed()
+        .setDescription(`**<@${message.author.id}> just slapped ${personslap}! ${quoter}!**`)
+        .setImage(slapR)
+        .setColor(client.config.embedColor)
+
+        message.channel.send(embed)
+        return
+    }
+
+    if(personslap.id === client.user.id) {
+        let personslap = 'me, the fricc?'
+        let embed = new Discord.RichEmbed()
+        .setDescription(`**<@${message.author.id}> just slapped ${personslap}! ${quoter}!**`)
+        .setImage(slapR)
+        .setColor(client.config.embedColor)
+
+        message.channel.send(embed)
+        return
+    }
+
     let embed = new Discord.RichEmbed()
     .setDescription(`**<@${message.author.id}> just slapped ${personslap}! ${quoter}!**`)
     .setImage(slapR)
     .setColor(client.config.embedColor)
 
     message.channel.send(embed)
-}
-
-exports.help = {
-    name: "slap",
-    description: "The `slap` command allows you to slap your friends to show your disdain for them! :)",
-    usage: "`yabe slap <person to slap>`",
 }
