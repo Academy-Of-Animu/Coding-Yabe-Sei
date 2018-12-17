@@ -1,0 +1,38 @@
+////////////////////////
+/Usability Site Outline/
+////////////////////////
+Home Page - Done!
+Define Usability testing in simple, easy to understand terms
+	_Usability is the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use
+	_Here is the Process we use and advise to our clients: 1.Choose goal-based tasks, 2.Write Scenarios, 3.Practice and Test, 4.Fix the top problems or concerns
+	_Testing is done after creation of the first version of the site and after testing and feedback, the website is changed according to the concerns.
+	_Image Map!
+Job Descriptions
+	_Web Author- planning the style of copy required and the frequency with which it will need updating
+	 creating schedules and agreeing deadlines
+	 producing new content and writing it in an interesting and appealing manner
+	 identifying suitable subjects for interview
+	 sourcing images and artwork, and commissioning photographers
+	 liaising with clients or internal departments to check on content, style and presentation
+	 incorporating written copy onto the website from other individuals or departments
+	 maintaining the site once it is live and ensuring the information is accurate
+	 developing editorial policies, copyright, data protection and best practice.
+	 Salary: $35k-$75k
+	_Web Designer- A web designer is someone who is both creative and technically inclined, and uses both these attributes
+	 to build or redesign websites. The web designer has the ability to understand what is needed to make a website functional
+	 and easy to use, but at the same time make it aesthetically appealing to the user.
+	 Salary: $33k-$73k
+	_Webmaster- A webmaster is an individual who maintains a website. A webmaster may be a web developer and the same
+	 individual that built a particular website, but the duties of a webmaster are aimed at handling the upkeep of a functioning
+	 website. The duties of a webmaster are very broad and differ greatly with the size and the needs of the website being
+	 managed
+	 Salary: $63k-$85k
+	_Project Manager- Accomplishes Web project objectives by establishing project scope; designing and delivering solutions;
+	 leading team members.
+	 Salary: $54k-$118k
+Prices
+	_Evaluation Cost (from $1000 to $10,000) plus $225/ hour for the first 1000 hours, $175 for rest of project.
+	 $15,000+ hourly rates for continued services after project(site maintenance) +fees
+	 (difficulty fees, recruitment fees, extension fees, client difficulty fees, etc.) Fees can range anywhere from a minimum of $0 to $20,000 maximum
+ Article
+	_Insert Link Here
