@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
     let dice = args[0]
     let sides = args[1]
 
-    if((isNaN(dice)) || (isNaN(sides))) return message.reply('Please roll in an accepted format\n`>roll <# of dice> <# of sides per die>`')
+    if((isNaN(dice)) || (isNaN(sides))) return message.reply('Please roll in an accepted format\n`yabe roll <# of dice> <# of sides per die>`')
     if(dice > 15 || sides > 120) return message.reply('Please provide a valid amount of dice and sides. (no more than 15 die and/or 120 sides)')
     if(dice <= 0 || sides <= 0) return message.reply('Can\'t roll non-existent die with/or non-existent sides')
 
