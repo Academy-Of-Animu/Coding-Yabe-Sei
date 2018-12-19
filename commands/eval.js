@@ -34,7 +34,9 @@ exports.run = (client, message, args) => {
 			message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
 		}
 	} else {
-		return message.channel.send('```js\nNo Eval 4 U\n```');
+	      let evalList = ['NO EVAL 4 U', 'NO TOKEN 4 U', 'EVAL IS NOT 4 U', 'EVAL IS 4 DEVS', 'TRYING TO BREAK OUR BOT?', 'OOF', 'L337 H4x0r', 'OH NO, OUR TOKEN', 'OOF']
+	      let evalListR = evalList[Math.floor(Math.random() * evalList.length)]
+	      return message.channel.send('```js\n' + evalListR + '\n```');
 	}
 }
 
