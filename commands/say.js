@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-    if(message.member.hasPermission("MANAGE_GUILD")) {
+    if(message.member.hasPermission("MANAGE_GUILD") || message.author.id == client.config.devs.canarado || message.author.id == client.config.devs.senpai || message.author.id == client.config.devs.illusion) {
         let text = args.join(" ");
         message.delete();
         message.channel.send(text);
