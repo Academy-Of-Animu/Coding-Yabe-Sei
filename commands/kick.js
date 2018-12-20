@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-exports.run = (client, message, [mention, ...reason]) => {
+exports.run = async (client, message, [mention, ...reason]) => {
 
 	if (!message.member.hasPermission("KICK_MEMBERS"))
 		return message.reply("You can't use this command.");
@@ -21,21 +21,39 @@ exports.run = (client, message, [mention, ...reason]) => {
 		.setTimestamp()
 		.setFooter(`Kicked by ${message.author.username}`)
 
-	if (kickMember.kickable) {
-		if (reason != "") {
-			embed.addField("Reason for kick", `${reason.join(" ")}`)
-			kickMember.send(embed);
-		}
-		else {
-			embed.addField("Reason for kick", "No reason was specified")
-			kickMember.send(embed);
-		}
-		setTimeout(() => kickMember.kick().then(member => {
-			message.reply(`${member.user.username} was succesfully kicked.`);
-		}), 2000);
-	} else {
-		message.channel.send(`Failed to kick member ${kickMember}`);
-	}
+	message.channel.send('Are you sure you want to kick this user?\nreply with "yes" or "no" in the next 10 seconds');
+
+	await message.channel.awaitMessages(msg => msg.content == "yes" || msg.content == "no",
+		{
+			maxMatches: 1,
+			max: 1,
+			time: 10000,
+			errors: ['time']
+		})
+		.then(msg1 => {
+			if (msg1.first().author != message.author) { message.channel.send("only user whom requested the kick can accept or decline") } else {
+				if (msg1.first().content == "yes") {
+					setTimeout(() => kickMember.kick().then(member => {
+						message.reply(`${member.user.username} was succesfully kicked.`);
+					}), 2000);
+					if (kickMember.kickable) {
+						if (reason != "") {
+							embed.addField("Reason for kick", `${reason.join(" ")}`)
+							kickMember.send(embed);
+						}
+						else {
+							embed.addField("Reason for kick", "No reason was specified")
+							kickMember.send(embed);
+						}
+					} else {
+						message.channel.send(`Failed to kick member ${kickMember}`);
+					}
+				} else if (msg1.first().content == "no") {
+					message.channel.send("Kicking aborted");
+				}
+			}
+		})
+		.catch(() => message.channel.send("No answer was provided within the 10 second window. aborting kick..."));
 }
 
 exports.help = {
