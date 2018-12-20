@@ -16,6 +16,6 @@ exports.run = (client, message, args) => {
 
 exports.help = {
     name: "send",
-    description: "The `send` command sends a command to a specific channel, as specified.",
+    description: "The `send` command  requires `Manage Server` permission. Use it to send a command to a specific channel, as specified.",
     usage: "`yabe send #<channel> <content of the message>`"
 }
