@@ -6,6 +6,17 @@ const client = new Discord.Client();
 const config = require("./config.json");
 client.config = config;
 
+const DBL = require("dblapi.js");
+const dbl = new DBL(process.env.DBL_TOKEN, client);
+
+dbl.on('posted', () => {
+  console.log('Server count has been posted');
+})
+
+dbl.on('error', err => {
+ console.log(`${err}`);
+})
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
