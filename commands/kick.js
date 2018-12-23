@@ -23,7 +23,7 @@ exports.run = async (client, message, [mention, ...reason]) => {
 
 	message.channel.send('Are you sure you want to kick this user?\nreply with "yes" or "no" in the next 10 seconds');
 
-	await message.channel.awaitMessages(msg => msg.content == "yes" || msg.content == "no",
+	await message.channel.awaitMessages(msg => msg.content.toLowerCase() == "yes" || msg.content.toLowerCase() == "no",
 		{
 			maxMatches: 1,
 			max: 1,
@@ -32,7 +32,7 @@ exports.run = async (client, message, [mention, ...reason]) => {
 		})
 		.then(msg1 => {
 			if (msg1.first().author != message.author) { message.channel.send("only user whom requested the kick can accept or decline") } else {
-				if (msg1.first().content == "yes") {
+				if (msg1.first().content.toLowerCase() == "yes") {
 					setTimeout(() => kickMember.kick().then(member => {
 						message.reply(`${member.user.username} was succesfully kicked.`);
 					}), 2000);
@@ -48,7 +48,7 @@ exports.run = async (client, message, [mention, ...reason]) => {
 					} else {
 						message.channel.send(`Failed to kick member ${kickMember}`);
 					}
-				} else if (msg1.first().content == "no") {
+				} else if (msg1.first().content.toLowerCase() == "no") {
 					message.channel.send("Kicking aborted");
 				}
 			}

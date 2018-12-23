@@ -23,7 +23,7 @@ exports.run = async (client, message, [mention, ...reason]) => {
 
 		message.channel.send('Are you sure you want to ban this user?\nreply with "yes" or "no" in the next 10 seconds');
 
-		await message.channel.awaitMessages(msg => msg.content == "yes" || msg.content == "no",
+		await message.channel.awaitMessages(msg => msg.content.toLowerCase() == "yes" || msg.content.toLowerCase() == "no",
 			{
 				maxMatches: 1,
 				max: 1,
@@ -32,7 +32,7 @@ exports.run = async (client, message, [mention, ...reason]) => {
 			})
 			.then(msg1 => {
 				if (msg1.first().author != message.author) { message.channel.send("only user whom requested the ban can accept or decline") } else {
-					if (msg1.first().content == "yes") {
+					if (msg1.first().content.toLowerCase() == "yes") {
 						setTimeout(() => banMember.ban().then(member => {
 							message.reply(`${member.user.username} was succesfully banned.`);
 						}), 2000);
@@ -48,7 +48,7 @@ exports.run = async (client, message, [mention, ...reason]) => {
 						} else {
 							message.channel.send(`Failed to ban member ${banMember}`);
 						}
-					} else if (msg1.first().content == "no") {
+					} else if (msg1.first().content.toLowerCase() == "no") {
 						message.channel.send("Banning aborted");
 					}
 				}
