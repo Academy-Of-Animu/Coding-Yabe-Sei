@@ -151,7 +151,7 @@ exports.run = (client, message, [args, ...words]) => {
         let words2translate = words.join(" ").toLowerCase().replace(regex, "");
         let link = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${targetLang}&dt=t&ie=UTF-8&oe=UTF-8&q=${encodeURI(words2translate)}`;
 
-        request.get(link, function(error, response, body) {
+        request.get(link, (error, response, body) => {
             if (error) 
                 console.log(error);
 
@@ -167,7 +167,7 @@ exports.run = (client, message, [args, ...words]) => {
                 console.log(err);
                 message.channel.send("Something went wrong while translating, please check you formatted it correctly and try again.\nor if you believe this is a bug please report it with `yabe bug`");
             }
-        })
+        });
     }
 }
 
