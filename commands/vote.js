@@ -15,7 +15,7 @@ exports.run = async (client, message, [timeS, ...votingthing]) => {
         if(isNaN(timeS)) {
             // timeS = 10000
             votingthing = timeS + ' ' + votingthing.join(' ')
-            timeS = 10000
+            timeS = 60000
         } else {
             votingthing = votingthing.join(' ')
             timeS = parseInt(timeS) * 1000
