@@ -52,7 +52,7 @@ exports.run = async (client, message, [timeS, ...votingthing]) => {
                                                 "----------------------------------------", true)
           .setColor(client.config.embedColor)
 
-        await msg.edit("Voting finsished!", {embed: sumsum});
+        await msg.edit("Voting finished!", {embed: sumsum});
     } catch (err) {
         console.log(err)
     }
