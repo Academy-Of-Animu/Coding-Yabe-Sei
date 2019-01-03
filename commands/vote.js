@@ -33,7 +33,7 @@ exports.run = async (client, message, [timeS, ...votingthing]) => {
         await msg.react(disagree);
 
         const reactions = await msg.awaitReactions(reaction => reaction.emoji.name === agree || reaction.emoji.name === disagree, {time: timeS});
-        msg.delete();
+        // msg.delete();
 
         var NO_Count = reactions.get(disagree).count;
         var YES_Count = reactions.get(agree);
@@ -45,19 +45,17 @@ exports.run = async (client, message, [timeS, ...votingthing]) => {
         }
 
         var sumsum = new Discord.RichEmbed()
-        
-                    .addField("Voting Finished:", "----------------------------------------\n" +
+        .setTitle(`${votingthing.replace(/([^\W_]+[^\s-]*) */g, function(txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()})}`)
+                    .setDescription("----------------------------------------\n" +
                                                 "Total votes (Yes): " + `${YES_Count-1}\n` +
                                                 "Total votes (No): " + `${NO_Count-1}\n` +
                                                 "----------------------------------------", true)
+          .setColor(client.config.embedColor)
 
-                    .setColor(client.config.embedColor)
-
-        await message.channel.send({embed: sumsum});
+        await msg.edit("Voting finsished!", {embed: sumsum});
     } catch (err) {
         console.log(err)
     }
-
 }
 
 exports.help = {
