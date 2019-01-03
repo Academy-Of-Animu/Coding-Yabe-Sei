@@ -21,7 +21,7 @@ exports.run = async (client, message, [timeS, ...votingthing]) => {
             timeS = parseInt(timeS) * 1000
         }
 
-        if(timeS <= 5000 || timeS >= 180000) {
+        if(timeS <= 5000 || timeS >= 180001) {
             message.reply('Please pick an appropriate amount of time for the vote to take (no less than 5 seconds and no more than three minutes)')
             return
         }
