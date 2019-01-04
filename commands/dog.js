@@ -24,5 +24,5 @@ exports.run = (client, message, args) => {
 exports.help = {
     name: "dog",
     description: "The `dog` command sends a random doggo!",
-    usage: "`yabe dog",
+    usage: "`yabe dog`",
 }
