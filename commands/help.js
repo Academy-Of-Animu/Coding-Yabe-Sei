@@ -37,7 +37,7 @@ exports.run = (client, message, args) => {
             .addField("**Changelog**", "You can check the latest changes with `yabe changelog`")
             .addField("**Commands**", "List of all available commands\nFor additional help with a command, type `yabe help <command name>`\nThank you for using the Yabe beta bot! We hope you will stick with us!")
             .addField("**Moderation** *`each require certain perms`*", "`say` `kick` `ban` `rem` `send` `vote`")
-            .addField("**Fun**", "`meme` `poke` `slap` `rate` `smug` `owofy`")
+            .addField("**Fun**", "`meme` `poke` `slap` `rate` `smug` `owofy` `dog`")
             .addField("**Games**", "`8ball` `roll` `flip`")
             .addField("**Learning**", "`yabe learn` to learn more! [coming soon, I promise]")
             .addField("**Random**", "`roles` `addrole` `ping` `help` `serverinfo` `info` `bug` `invite` `whois` `avatar` `changelog` `translate` `uptime` `osu` `channel`")
