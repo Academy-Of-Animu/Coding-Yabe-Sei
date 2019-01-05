@@ -3,13 +3,13 @@ const Discord = require("discord.js");
 exports.run = async (client, message, [mention, ...reason]) => {
 
 	if (!message.member.hasPermission("BAN_MEMBERS"))
-		return message.reply("You can't use this command.");
+		return message.reply("you can't use this command.");
 	if (message.mentions.members.size === 0)
-		return message.reply("Please mention a user to ban");
+		return message.reply("please mention a user to ban");
 	if (!message.guild.me.hasPermission("BAN_MEMBERS"))
 		return message.reply("I need permissions to ban!");
 	if (message.mentions.members.first().hasPermission("ADMINISTRATOR"))
-		return message.reply("Can't ban an Admin :p");
+		return message.reply("can't ban an Admin :p");
 
 	const banMember = message.mentions.members.first();
 
