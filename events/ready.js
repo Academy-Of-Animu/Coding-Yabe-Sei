@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 module.exports = (client) => {
     //const activitiesList = [`coding-yabe-sei.io`, `for ${client.users.size} users on ${client.guilds.size} servers`, `with the >help command`, `with the devs`]
 
