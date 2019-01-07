@@ -19,7 +19,7 @@ module.exports = (client) => {
     let embed = new Discord.RichEmbed()
     .setTitle('I just restarted dads!')
     .setTimestamp()
-    .setFooter('Teehee owo')
+    .setFooter(cutiesR)
     .setColor(client.config.embedColor)
 
     client.channels.get('531644078673100830').send(embed)
