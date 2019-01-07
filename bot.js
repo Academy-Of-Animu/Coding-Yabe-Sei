@@ -35,9 +35,9 @@ fs.readdir("./commands/", (err, files) => {
     let props = require(`./commands/${file}`);
     let commandName = file.split(".")[0];
     // console.log(`Attempting to load command ${commandName}`);
-    console.log('I am prepared to decimate them weebs with my otaku-desu status ÒwÓ')
     client.commands.set(commandName, props);
   });
+  console.log('I am prepared to decimate them weebs with my otaku-desu status ÒwÓ')
 });
 
 client.login(process.env.BOT_TOKEN);
