@@ -10,4 +10,12 @@ module.exports = (client) => {
     */
 
     client.user.setActivity(`yabe help | ${client.guilds.size} servers`, { type: 'PLAYING' });
+    
+    let embed = new Discord.RichEmbed()
+    .setTitle('I just restarted dads!')
+    .setTimestamp()
+    .setFooter('Teehee owo')
+    .setColor(client.config.embedColor)
+
+    client.channels.get('531644078673100830').send(embed)
 }
