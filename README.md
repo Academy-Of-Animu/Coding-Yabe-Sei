@@ -34,7 +34,7 @@ This command is still a work-in-progress so it's doesn't work yet.
 ## Support
 ##### If you require assistance with anything, or have any questions about yabe you can make an issue on our [github here](https://github.com/Academy-Of-Animu/Coding-Yabe-Sei/issues), or join our [support server](https://discord.gg/bhZGHCm) and have a chat with the devs.
 <br>
------------------------------------
+---
 # TO DO LIST
 
 - [x] Make a proper README.md (really this time :squint:)
