@@ -24,6 +24,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "fun",
   name: "8ball",
   description: "Gives a totally ~~random~~ calculated answer to your question",
   usage: "`yabe 8ball <question or whatever you want really>`"

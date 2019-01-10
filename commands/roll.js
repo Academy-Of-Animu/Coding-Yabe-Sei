@@ -31,6 +31,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "fun",
   name: "roll",
   description: "The `roll` command rolls a specified number of die with a specified number of sides.",
   usage: "`yabe roll <number of die> <sides per die>`"

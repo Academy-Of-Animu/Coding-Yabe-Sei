@@ -13,6 +13,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "info",
   name: "uptime",
   description: "Allows you to view how long Yabe has been running.",
   usage: "`yabe uptime`",

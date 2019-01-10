@@ -29,6 +29,7 @@ exports.run = (client, message) => {
 }
 
 exports.help = {
+  type: "image",
   name: "smug",
   description: "Posts a random picture of a smug anime girl",
   usage: "`yabe smug`"

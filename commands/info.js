@@ -14,6 +14,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "util",
   name: "info",
   description: "The `info` command displays info about Yabe Sei, and the creators of Yabe.",
   usage: "`yabe info`",

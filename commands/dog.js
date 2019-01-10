@@ -19,6 +19,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "image",
   name: "dog",
   description: "The `dog` command sends a random doggo!",
   usage: "`yabe dog`",

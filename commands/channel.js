@@ -16,6 +16,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "util",
   name: "channel",
   description: "The `channel` command gives information about the current channel.",
   usage: "`yabe channel`"

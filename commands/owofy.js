@@ -11,6 +11,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "fun",
   name: "owofy",
   description: "The `owofy` command takes text and owofies it! Just try it out and you'll get the gist of it.",
   usage: "`yabe owofy <text to put through the owofication process>`"

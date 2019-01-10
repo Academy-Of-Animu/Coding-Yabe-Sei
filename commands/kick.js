@@ -57,6 +57,7 @@ exports.run = async (client, message, [mention, ...reason]) => {
 }
 
 exports.help = {
+  type: "mod",
   name: 'kick',
   description: 'The `kick` command requires `Kick Members` permission. It allows you to kick a specified user.',
   usage: '`yabe kick <@user> <reason>(optional)`'

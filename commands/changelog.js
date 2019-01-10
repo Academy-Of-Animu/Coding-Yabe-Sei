@@ -12,6 +12,7 @@ exports.run = (client, message) => {
 }
 
 exports.help = {
+  type: "util",
   name: "changelog",
   description: "The `changelog` command displays an embed of latest changes to the bot.",
   usage: "`yabe changelog`",

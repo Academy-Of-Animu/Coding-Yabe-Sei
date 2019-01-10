@@ -31,6 +31,7 @@ exports.run = (client, message, args) => {
   }
 }
 exports.help = {
+  type: "mod",
   name: "addrole",
   description: "Allows yabe to give you the provided role",
   usage: "`yabe addrole <role\'s name>`",

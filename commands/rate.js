@@ -22,6 +22,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "fun",
   name: "rate",
   description: "Rates whatever you input as argument based on her mood",
   usage: "`yabe rate <thing to rate>`"

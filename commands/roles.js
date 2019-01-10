@@ -30,6 +30,7 @@ exports.run = (client, message, args) => {
 
 
 exports.help = {
+  type: "info",
   name: "roles",
   description: "The `roles` command displays all roles below the \`Coding Yabe Sei\` role.",
   usage: "`yabe roles`"

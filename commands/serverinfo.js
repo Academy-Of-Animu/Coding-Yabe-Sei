@@ -49,6 +49,7 @@ exports.run = (client, message) => {
 }
 
 exports.help = {
+  type: "info",
   name: "serverinfo",
   description: "The `serverinfo` command returns info about the current server, such as when it was created and the owner, etc.",
   usage: "`yabe serverinfo`",

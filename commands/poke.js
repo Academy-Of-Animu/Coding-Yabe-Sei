@@ -27,6 +27,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "fun",
   name: "poke",
   description: "The `poke` command allows you to poke your friends!",
   usage: "`yabe poke <person to poke>`",

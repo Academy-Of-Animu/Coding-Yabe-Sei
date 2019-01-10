@@ -91,6 +91,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "learn",
   name: "learn",
   description: "Yabe-Sei will try to assist people with learning how to code and become good programmers.",
   usage: "For starters, the command to initiate the learning mode for Yabe is `yabe learn`. You then add more arguments to that to learn more about specified things.\n" +

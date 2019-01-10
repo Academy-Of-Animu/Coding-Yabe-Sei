@@ -49,6 +49,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "util",
   name: "help",
   alt: ["halp","commands","cmds","h"],
   description: "The `help` command displays a help menu, which contains a list of commands and a way to find further help.",

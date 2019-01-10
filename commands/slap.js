@@ -50,6 +50,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "fun",
   name: "slap",
   description: "The `slap`command allows you to slap your friends to show your disdain for them! \:)",
   usage: "`yabe slap <@user>`",

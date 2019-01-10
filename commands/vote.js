@@ -87,6 +87,7 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = {
+  type: "fun",
   name: "vote",
   description: "The `vote` command takes a channel, a time and voting parameter and creates a vote out of it. This feature is in beta, so expect just a few bugs, it oughta mostly work though. This command requires `Kick Members` permission.",
   usage: "`yabe <channel to send vote in> <seconds for vote to last> <vote message>`"

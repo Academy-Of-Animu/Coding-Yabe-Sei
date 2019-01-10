@@ -35,6 +35,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  type: "fun",
   name: "flip",
   description: "Flips a coin (or coins)",
   usage: "`yabe flip <number of coins> (leave empty for one coin)`"
