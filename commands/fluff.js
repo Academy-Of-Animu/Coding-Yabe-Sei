@@ -8,9 +8,13 @@ exports.run = (client, message, args) => {
   avail = ["dog", "cat", "panda", "redpanda", "birb", "fox"]
   anim = avail[Math.floor(Math.random() * avail.length)]
 
-  request(url + anim + "img", function (error, response, body){
-	if(error){message.channel.send("Sorry something seems to have gone wrong!"); console.log(error); return;}  
-	
+  request(url + anim + "img", function(error, response, body) {
+    if (error) {
+      message.channel.send("Sorry something seems to have gone wrong!");
+      console.log(error);
+      return;
+    }
+
     body = JSON.parse(body);
     imgURL = body.link;
 
@@ -25,7 +29,7 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
-    name: "fluff",
-    description: "The `fluff` command sends a random cute animal!",
-    usage: "`yabe fluff`",
+  name: "fluff",
+  description: "The `fluff` command sends a random cute animal!",
+  usage: "`yabe fluff`",
 }

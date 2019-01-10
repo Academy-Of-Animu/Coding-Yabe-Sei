@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
-  const agree    = "✅";
+  const agree = "✅";
   const disagree = "❎";
-  
+
   try {
-      
+
     if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("You can't use this command. Ask a moderator to lead the voting.")
-      
+
     let channel;
     let timeS;
     let votingthing;
@@ -40,12 +40,14 @@ exports.run = async (client, message, args) => {
     }
 
     const VoteEmbed = new Discord.RichEmbed()
-    .setTitle(votingthing)
-    .setDescription("Vote Now!")
-    .setFooter(`Started by ${message.author.username}`, message.author.displayAvatarURL)
-    .setColor(client.config.embedColor)
+      .setTitle(votingthing)
+      .setDescription("Vote Now!")
+      .setFooter(`Started by ${message.author.username}`, message.author.displayAvatarURL)
+      .setColor(client.config.embedColor)
 
-    let msg = await channel.send({embed: VoteEmbed});
+    let msg = await channel.send({
+      embed: VoteEmbed
+    });
     await msg.react(agree);
     await msg.react(disagree);
 
@@ -85,7 +87,7 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = {
-    name: "vote",
-    description: "The `vote` command takes a channel, a time and voting parameter and creates a vote out of it. This feature is in beta, so expect just a few bugs, it oughta mostly work though. This command requires `Kick Members` permission.",
-    usage: "`yabe <channel to send vote in> <seconds for vote to last> <vote message>`"
+  name: "vote",
+  description: "The `vote` command takes a channel, a time and voting parameter and creates a vote out of it. This feature is in beta, so expect just a few bugs, it oughta mostly work though. This command requires `Kick Members` permission.",
+  usage: "`yabe <channel to send vote in> <seconds for vote to last> <vote message>`"
 }
