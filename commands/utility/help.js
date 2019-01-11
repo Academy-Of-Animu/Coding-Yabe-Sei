@@ -2,12 +2,15 @@ const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
   if (args[0]) {
-    let command = client.commands.has(command) ? client.commands.get(command) : (client.aliases.has(command) ? client.aliases.get(command) : null);
+    let command = client.commands.has(args[0]) ? client.commands.get(args[0]) : (client.aliases.has(args[0]) ? client.aliases.get(args[0]) : null);
     if (!command) return;
     const embed = new Discord.RichEmbed()
-    .addField(`**${command.name.toProperCase()} Command**`, command.help.description)
+    .addField(`**${command.help.name.toProperCase()} Command**`, command.help.description)
     .addField('Usage', command.help.usage)
-    .setColor(client.config.embedColor)
+    .setColor(client.config.embedColor);
+    if (command.help.alt) {
+      if (command.help.alt.length > 0) embed.addField(`Aliases`, command.help.alt.join(", "))
+    }
 
     message.channel.send(embed);
   } else {
