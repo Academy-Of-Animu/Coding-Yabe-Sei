@@ -5,10 +5,10 @@ const klaw = require("klaw");
 const path = require("path");
 
 const client = new Discord.Client();
-const config = require("./config.json");
-client.config = config;
+client.config = require("./config.json");
 client.commands = new Enmap();
 client.aliases = new Enmap();
+require("./utils.js")(client)
 
 const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.DBL_TOKEN, client);
