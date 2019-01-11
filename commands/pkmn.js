@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const DEX = require("./Pokemon/PokeDex.json")
-const MOVES = require("./Pokemon/PokeMoves.json")
+const DEX = require("../Pokemon/PokeDex.json")
+const MOVES = require("../Pokemon/PokeMoves.json")
 
 exports.run = (client, message, args) => {
 	if(!args){return;}else if(!args[1] && args[0] != "subcmds"){return;}
