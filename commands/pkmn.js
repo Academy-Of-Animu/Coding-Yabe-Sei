@@ -37,8 +37,6 @@ exports.run = (client, message, args) => {
 		"\nSpDefense: " + pkB.spDefense, true);
 		pokeEmbed.addField("Type(s):", pkmn.type.join(", "), true);
 
-		console.log(pkB)
-
         message.channel.send(pokeEmbed)
     }
 
