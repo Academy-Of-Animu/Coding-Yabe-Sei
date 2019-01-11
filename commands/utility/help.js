@@ -1,38 +1,48 @@
 const Discord = require("discord.js");
-const fs = require("fs");
 
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
   if (args[0]) {
-    fs.readdir("./commands/", (err, files) => {
-      if (err) console.error(err);
-
-      try {
-        files.forEach(file => {
-          let commands = [];
-          let props = require(`./${file}`);
-          let cmdName = props.help.name;
-          let cmdDescription = props.help.description;
-          let cmdUsage = props.help.usage;
-          commands.push(cmdName);
-
-          if (commands.includes(args[0])) {
-            if (args[0] == file.split('.')[0]) {
-              const embed = new Discord.RichEmbed()
-                .addField(`**${cmdName[0].toUpperCase() + cmdName.slice(1)} Command**`, cmdDescription)
-                .addField('Usage', cmdUsage)
-                .setColor(client.config.embedColor)
-
-              message.channel.send(embed);
-            }
-          }
-        });
-      } catch (err) {
-        message.channel.send("An error has occured while processing your request. if this persists send a bug report using `yabe bug`");
-        console.log(err)
-      }
-    });
-  } else {
+    let command = client.commands.has(command) ? client.commands.get(command) : (client.aliases.has(command) ? client.aliases.get(command) : null);
+    if (!command) return;
     const embed = new Discord.RichEmbed()
+    .addField(`**${command.name.toProperCase()} Command**`, command.help.description)
+    .addField('Usage', command.help.usage)
+    .setColor(client.config.embedColor)
+
+    message.channel.send(embed);
+  } else {
+    if (client.config.useNewHelp == "true") {
+      var cats = new Map();
+
+      client.commands.forEach(c => {
+        if (c.help.enabled == true) {
+          let n = c.help.type.toProperCase();
+          if (!cats.has(n)) {
+            cats.set(n, {
+              name: n,
+              array: []
+            });
+          };
+          cats.get(n).array.push(`\`${c.help.name}\``);
+        }
+      });
+
+      var embed = new Discord.RichEmbed();
+      embed.setTitle(`Commands Info`)
+      embed.setDescription(`Use \`yabe help commandname\` to view help on a comman. To see changelogs use \`yabe changlog\`. For additional help with a command, type \`yabe help <command name>\`.\nThank you for using the Yabe beta bot! We hope you will stick with us!`)
+      cats.forEach(cat => {
+        embed.addField(`**${cat.name}**`, cat.array.join(", "));
+      });
+      embed.setColor(client.config.embedColor)
+      embed.setTimestamp()
+      embed.setThumbnail(client.user.displayAvatarURL);
+      embed.setFooter(`Created by Adam, Hesham and Marvin`);
+      message.channel.send({embed}).catch((e) => {
+        message.channel.send(`Something went wrong! Tell a dev or try again.`);
+        console.error(e)
+      });
+    } else {
+      const embed = new Discord.RichEmbed()
       .setColor(client.config.embedColor)
       .addField("**Changelog**", "You can check the latest changes with `yabe changelog`")
       .addField("**Commands**", "List of all available commands\nFor additional help with a command, type `yabe help <command name>`\nThank you for using the Yabe beta bot! We hope you will stick with us!")
@@ -44,7 +54,8 @@ exports.run = (client, message, args) => {
       .setFooter("Created by Adam, Hesham and Marvin")
       .setTimestamp()
 
-    message.channel.send(embed)
+      message.channel.send(embed)
+    }
   }
 }
 
