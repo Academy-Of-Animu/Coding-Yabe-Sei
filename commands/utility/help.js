@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
       var cats = new Map();
 
       client.commands.forEach(c => {
-        if (c.help.enabled == true) {
+        if (c.help.enabled == true && c.help.hideHelp == false) {
           let n = c.help.type.toProperCase();
           if (!cats.has(n)) {
             cats.set(n, {
