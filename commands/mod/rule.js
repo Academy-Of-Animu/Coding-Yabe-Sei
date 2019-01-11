@@ -6,12 +6,12 @@ exports.run = (client, message, args) => {
 
 //going to allow mods to send an embed for cleaner looking rules and info templates
 
-// mmm, i could do this
+// mmm, i could do this. pretty simple to be honest, if you want me to lemme know fam.
 // - darko
 
 exports.help = {
   enabled: true,
-  hideHelp: false,
+  hideHelp: true,
   type: "mod",
   name: "rule",
   description: "Coming soon!",
