@@ -49,6 +49,8 @@ exports.run = (client, message) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "info",
   name: "serverinfo",
   description: "The `serverinfo` command returns info about the current server, such as when it was created and the owner, etc.",

@@ -11,6 +11,8 @@ exports.run = (client, message, args, tools) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "mod",
   name: "rem",
   description: "The `rem` command require the `Manage Messages` permission. It removes a given amount of message, to clean up chats.",

@@ -57,6 +57,8 @@ exports.run = async (client, message, [mention, ...reason]) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "mod",
   name: 'kick',
   description: 'The `kick` command requires `Kick Members` permission. It allows you to kick a specified user.',

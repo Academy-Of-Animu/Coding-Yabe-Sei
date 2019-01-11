@@ -47,6 +47,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "info",
   name: "whois",
   description: "The `whois` command displays a list of all people with a requested role.",

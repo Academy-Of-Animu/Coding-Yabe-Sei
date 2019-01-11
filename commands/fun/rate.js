@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
 
-  let answers = [
+  var answers = [
     //Postive
     "💯", "Yes", "me likey", "👀", "😍😍", "he's cool yea", "she's cool yea", "uhhhh yes", "indede", "would bang", "my favorite", "pretty good", "music to my ears",
     "dreamy", "Cool", "at least it's not bad", "not the best but still good", "AMAZING", "dude, that's like, awesome", `${client.emojis.get("526555941953339397")}`,
@@ -14,14 +14,13 @@ exports.run = (client, message, args) => {
 
   let answer = answers[Math.floor(Math.random() * answers.length)];
 
-  if (args[0]) {
-    message.channel.send(answer);
-  } else {
-    message.channel.send("Give me something to rate");
-  }
+  if (!args[0]) return message.channel.send("Give me something to rate");;
+  message.channel.send(answer);
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "fun",
   name: "rate",
   description: "Rates whatever you input as argument based on her mood",

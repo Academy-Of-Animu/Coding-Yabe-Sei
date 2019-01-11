@@ -24,6 +24,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "fun",
   name: "8ball",
   description: "Gives a totally ~~random~~ calculated answer to your question",

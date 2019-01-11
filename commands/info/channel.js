@@ -16,6 +16,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "info",
   name: "channel",
   description: "The `channel` command gives information about the current channel.",

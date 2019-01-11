@@ -171,6 +171,8 @@ exports.run = (client, message, [args, ...words]) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "util",
   name: "translate",
   description: "The `translate` command translates any text from any given language to another",

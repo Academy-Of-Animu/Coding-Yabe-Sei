@@ -57,6 +57,8 @@ exports.run = async (client, message, [mention, ...reason]) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "mod",
   name: "ban",
   description: "The `ban` command requires `Ban Members` permission. It allows you to ban a specified user.",

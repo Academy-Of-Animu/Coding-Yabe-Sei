@@ -19,6 +19,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "image",
   name: "dog",
   description: "The `dog` command sends a random doggo!",

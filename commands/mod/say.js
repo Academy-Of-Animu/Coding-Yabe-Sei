@@ -9,6 +9,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "mod",
   name: "say",
   description: "The `say` command requires `Manage Server` permission. It allows you to make the bot say what you want.",

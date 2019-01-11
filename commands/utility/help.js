@@ -49,6 +49,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "util",
   name: "help",
   alt: ["halp","commands","cmds","h"],

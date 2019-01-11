@@ -15,6 +15,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "util",
   name: "bug",
   description: "The `bug` command allows the user to send a bug receipt to the developers of the bot.",

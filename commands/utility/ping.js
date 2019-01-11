@@ -9,6 +9,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "util",
   name: "ping",
   description: "The `ping` command returns the client's ping to the Discord API and the users ping to the client's host server.",

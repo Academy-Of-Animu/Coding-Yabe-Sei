@@ -26,6 +26,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "info",
   name: "osu",
   description: "The `osu` command grabs a users Osu stats. Must provide username exactly as it is spelled on their Osu profile.",

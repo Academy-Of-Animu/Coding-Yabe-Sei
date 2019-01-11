@@ -35,6 +35,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "fun",
   name: "flip",
   description: "Flips a coin (or coins)",

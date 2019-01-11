@@ -91,6 +91,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "learn",
   name: "learn",
   description: "Yabe-Sei will try to assist people with learning how to code and become good programmers.",

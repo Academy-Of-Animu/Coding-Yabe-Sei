@@ -41,6 +41,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: true,
   type: "owner",
   name: "eval",
   description: "Evaluates javascript code",

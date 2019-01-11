@@ -18,6 +18,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "image",
   name: "meme",
   description: "The `meme` command displays a random meme from the interwebs.",

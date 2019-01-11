@@ -29,6 +29,8 @@ exports.run = (client, message) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "image",
   name: "smug",
   description: "Posts a random picture of a smug anime girl",

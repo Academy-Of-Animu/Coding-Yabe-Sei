@@ -10,6 +10,8 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "util",
   name: "invite",
   description: "The `invite` command sends an instant invite for Yabe straight to your own server(s).",

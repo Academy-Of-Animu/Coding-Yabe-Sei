@@ -10,6 +10,8 @@ exports.run = (client, message, args) => {
 // - darko
 
 exports.help = {
+  enabled: true,
+  hideHelp: false,
   type: "mod",
   name: "rule",
   description: "Coming soon!",
