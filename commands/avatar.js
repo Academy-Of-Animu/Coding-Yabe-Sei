@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
 				var target = message.guild.members.find(member => [member.displayName.toLowerCase(), member.user.username.toLowerCase()]
 					.includes(targetName.toLowerCase())).user; 
 				}	
-				catch
+				catch (err)
 				{
 									// If the supplied name cannot be resolved, check for any discriminators and strip them incase of a "silent mention" used to autofill the target's name
 								//We do the discriminator check after the name check fails, incase the target has a # in their name
