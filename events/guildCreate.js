@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports = (client, guild) => {
+    try {
     client.user.setActivity(`yabe help | ${client.guilds.size} servers`, { type: 'PLAYING' })
 
     let logChannel = client.config.logChannel
@@ -12,4 +13,7 @@ module.exports = (client, guild) => {
     .setTimestamp()
 
     client.channels.get(logChannel).send(embed)
+    } catch (err) {
+        console.log(err)
+    }
 }
