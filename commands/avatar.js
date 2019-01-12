@@ -2,32 +2,53 @@ const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
 	try {
-		let mem = args.join(' ')
-		let memb = message.guild.members.find(m => [m.displayName.toLowerCase(), m.user.username.toLowerCase()].includes(mem.toLowerCase()))
+		var targetName = args.join(' ')
 
-		if (mem.includes('@')) {
-			let memb = message.mentions.users.first()
+		if(targetName.includes('@'))
+			target = message.mentions.users.first();
 
-			let embed = new Discord.RichEmbed()
-				.setImage(memb.displayAvatarURL)
-				.setColor(client.config.embedColor)
-
-			message.channel.send(embed)
-			return
+		else if(args.length > 0 && !targetName.includes('@'))
+		{ 
+			try {
+				var target = message.guild.members.find(member => [member.displayName.toLowerCase(), member.user.username.toLowerCase()]
+					.includes(targetName.toLowerCase())).user; 
+				}	
+				catch
+				// If the supplied name cannot be resolved, check for any discriminators and strip them incase of a "silent mention" used to autofill the target's name
+								//We do the discriminator check after the name check fails, incase the target has a # in their name
+				{
+							targetName = targetName.substring(0, targetName.indexOf('#'));
+							var target = message.guild.members.find(member => [member.displayName.toLowerCase(), member.user.username.toLowerCase()]
+								.includes(targetName.toLowerCase())).user; 
+				}
 		}
+		else if(args.length == 0)
+			var target = message.author;
 
 		let embed = new Discord.RichEmbed()
-			.setImage(memb ? memb.user.displayAvatarURL : message.author.displayAvatarURL)
-			.setColor(client.config.embedColor)
+			.setTitle(`**${target.username}'s** Avatar`)
+			.setImage(target.displayAvatarURL)
+			.setColor(client.config.embedColor);
+		return message.channel.send(embed)
 
-		message.channel.send(embed)
 	} catch (err) {
-		console.log(err)
-	}
+		// If no user can be found, the error will be caught here
+			//Check for perms incase yabe is no longer required to be an administrator in the future (@illusion luv u bby)
+		if(target == null)
+			{
+				message.react('💤');
+				message.channel.send(`❌ user \`${targetName}\` not found ❌`).then(respMessage => {
+					if(message.guild.me.hasPermission("MANAGE_MESSAGES"))
+						respMessage.delete(10000);
+			});
+		}
+		 else	
+			console.log(err);
+	} 
 }
 
 exports.help = {
 	name: "avatar",
-	description: "The `avatar` command sends the specified user's profile avatar on Discord. Leave empty to get your own avatar.",
-	usage: "`yabe avatar <desired user(without @)/leave blank for own>`",
+	description: "Display the **avatar** of the requested user - A **username**(not case-sensitive) or **mention** is accepted. | Use without any arguments to display your own avatar",
+	usage: "`yabe avatar @target`",
 }
