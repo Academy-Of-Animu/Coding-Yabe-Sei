@@ -4,10 +4,9 @@ module.exports = (client, guild) => {
     try {
     client.user.setActivity(`yabe help | ${client.guilds.size} servers`, { type: 'PLAYING' })
         
-    let server = client.guild;
     let bots = 0;
     let people = 0;
-    server.members.forEach(mem => {
+    guild.members.forEach(mem => {
         if (mem.user.bot){bots += 1;}
         else{people+=1;}
     });
