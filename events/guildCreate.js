@@ -17,7 +17,7 @@ module.exports = (client, guild) => {
     .setColor(client.config.embedColor)
     .setTitle(`Just __joined__ ${guild.name}`)
     .setDescription(`**${guild.owner.user.username}#${guild.owner.user.discriminator}** is the owner of the guild.\nGuild has **${guild.members.size}** members.\n\n`)
-    .addField("People: ", people, true);
+    .addField("People: ", people, true)
     .addField("Bots: ", bots, true)
     .setTimestamp()
 
