@@ -64,6 +64,7 @@ exports.run = async (client, message, args) => {
     }
 
     var total = yes > no ? "In Favor of Yes" : "In Favor of No";
+    if(yes == no) total = "It was a tie!"
 
     const embed = new Discord.RichEmbed()
       .setTitle(`${votingthing.replace(/([^\W_]+[^\s-]*) */g, function(txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()})}`)
