@@ -8,10 +8,10 @@ exports.run = (client, message, args) => {
         imgURL = body.url;
         imgText = body.text;
 
-        const emb = new Discord.RichEmbed()
-            .setDescription = imgText
-            .setColor(client.config.embedColor)
-            .setImage(imgURL);
+        const emb = new Discord.RichEmbed();
+            emb.setDescription = imgText;
+            emb.setColor(client.config.embedColor);
+            emb.setImage(imgURL);
 
         message.channel.send(emb);
     })
