@@ -18,10 +18,10 @@ exports.run = (client, message, args) => {
         body = JSON.parse(body);
         imgURL = body.link;
 
-        const emb = new Discord.RichEmbed()
-            .setDescription = descs[Math.floor(Math.random() * avail.length)]
-            .setColor(client.config.embedColor)
-            .setImage(imgURL);
+        const emb = new Discord.RichEmbed();
+            emb.setDescription = descs[Math.floor(Math.random() * avail.length)];
+            emb.setColor(client.config.embedColor);
+            emb.setImage(imgURL);
 
         message.channel.send(emb);
     })
