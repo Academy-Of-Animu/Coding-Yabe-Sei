@@ -23,13 +23,13 @@ exports.run = (client, message, args) => {
             })
 
     } catch (err) {
-        console.log('There was an error adding a role: ' + err);
+        console.log(`There was an error adding a role: ${err}`);
     }
 }
 exports.help = {
     enabled: true,
     hideHelp: false,
-    type: "mod",
+    type: "util",
     name: "addrole",
     description: "Allows yabe to give you the provided role",
     usage: "`yabe addrole <role\'s name>`",
