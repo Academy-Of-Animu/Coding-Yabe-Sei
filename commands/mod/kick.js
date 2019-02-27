@@ -23,37 +23,44 @@ exports.run = async (client, message, [mention, ...reason]) => {
 
 	message.channel.send('Are you sure you want to kick this user?\nreply with "yes" or "no" in the next 10 seconds');
 
-	await message.channel.awaitMessages(msg => msg.content.toLowerCase() == "yes" || msg.content.toLowerCase() == "no",
-		{
-			maxMatches: 1,
-			max: 1,
-			time: 10000,
-			errors: ['time']
-		})
-		.then(msg1 => {
-			if (msg1.first().author != message.author) { message.channel.send("only user whom requested the kick can accept or decline") } else {
-				if (msg1.first().content.toLowerCase() == "yes") {
-					setTimeout(() => kickMember.kick().then(member => {
-						message.reply(`${member.user.username} was succesfully kicked.`);
-					}), 2000);
-					if (kickMember.kickable) {
-						if (reason != "") {
-							embed.addField("Reason for kick", `${reason.join(" ")}`);
-							kickMember.send(embed);
-						}
-						else {
-							embed.addField("Reason for kick", "No reason was specified");
-							kickMember.send(embed);
-						}
-					} else {
-						message.channel.send(`Failed to kick member ${kickMember}`);
+	// let good = ['yes', 'no']
+
+	const collector = message.channel.createMessageCollector(msg => msg.author.id === message.author.id, { time: 10000 })
+
+	collector.on("collect", async (x) => {
+
+			if (x.content == "yes") {
+				setTimeout(() => kickMember.kick().then(member => {
+					message.reply(`${member.user.username} was succesfully kicked.`);
+				}), 2000)
+				if (kickMember.kickable) {
+					if (reason != "") {
+						collector.stop()
+						embed.addField("Reason for kick", `${reason.join(" ")}`);
+						return kickMember.send(embed);
 					}
-				} else if (msg1.first().content.toLowerCase() == "no") {
-					message.channel.send("Kicking aborted");
+					else {
+						collector.stop()
+						embed.addField("Reason for kick", "No reason was specified");
+						return kickMember.send(embed);
+					}
+				} else {
+					collector.stop()
+					return message.channel.send(`Failed to kick member ${kickMember}`);
 				}
+			} else if (x.content == "no") {
+				collector.stop()
+				return message.channel.send("Kicking aborted");
+			} else {
+				message.channel.send('not valid input')
 			}
 		})
-		.catch(() => message.channel.send("No answer was provided within the 10 second window. aborting kick..."));
+
+		collector.on("end", (x, reason) => {
+			if(reason === 'time') {
+				message.channel.send('Aborting kick.')
+			}
+		})
 }
 
 exports.help = {
