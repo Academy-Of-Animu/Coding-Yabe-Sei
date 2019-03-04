@@ -32,7 +32,7 @@ exports.run = async (client, message, args) => {
 
             var embed = new Discord.RichEmbed();
             embed.setTitle(`Commands Info`);
-            embed.setDescription(`Use \`yabe help commandname\` to view help on a comman. To see changelogs use \`yabe changlog\`. For additional help with a command, type \`yabe help <command name>\`.\nThank you for using the Yabe beta bot! We hope you will stick with us!`);
+            embed.setDescription(`Use \`yabe help commandname\` to view help on a command. To see changelogs use \`yabe changlog\`. For additional help with a command, type \`yabe help <command name>\`.\nThank you for using the Yabe beta bot! We hope you will stick with us!`);
             cats.forEach(cat => {
                 embed.addField(`**${cat.name}**`, cat.array.join(", "));
             });
