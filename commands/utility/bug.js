@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
         .setDescription(bug)
         .setColor(client.config.embedColor);
 
-    client.channels.get('505094982085115905').send(embed);
+    client.channels.get('533714573031899156').send(embed);
 }
 
 exports.help = {
