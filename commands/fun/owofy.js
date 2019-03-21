@@ -3,6 +3,8 @@ const Discord = require('discord.js');
 exports.run = (client, message, args) => {
     let sentence = args.join(' ');
     if (!sentence) return message.reply('I can\'t owo-fy an empty message! uwu');
+    
+    let faces=["(・`ω´・)",";;w;;","owo","UwU",">w<","^w^"];
 
     let newSentence = sentence.replace(/[lr]/g, 'w');
       newSentence = newSentence.replace(/(?:r|l)/g, "w");
