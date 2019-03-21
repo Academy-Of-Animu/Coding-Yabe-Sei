@@ -5,16 +5,14 @@ exports.run = (client, message, args) => {
     if (!sentence) return message.reply('I can\'t owo-fy an empty message! uwu');
 
     let newSentence = sentence.replace(/[lr]/g, 'w');
-    newSentence = newSentence.replace(/[LR]/g, 'W');
-    newSentence = newSentence.replace(/(te)/g, 'twe');
-    newSentence = newSentence.replace(/(Te)/g, 'Twe');
-    newSentence = newSentence.replace(/(no)/g, 'nyo');
-    newSentence = newSentence.replace(/(No)/g, 'Nyo');
-    newSentence = newSentence.replace(/(ne)/g, 'nye');
-    newSentence = newSentence.replace(/(Ne)/g, 'Nye');
-    newSentence = newSentence.replace(/(love)/g, 'wuv');
-    newSentence = newSentence.replace(/(Love)/g, 'Wuv');
-    //more work needs to be done on this *i'm looking at you canny*
+      newSentence = newSentence.replace(/(?:r|l)/g, "w");
+      newSentence = newSentence.replace(/(?:R|L)/g, "W");
+      newSentence = newSentence.replace(/n([aeiou])/g, 'ny$1');
+      newSentence = newSentence.replace(/N([aeiou])/g, 'Ny$1');
+      newSentence = newSentence.replace(/N([AEIOU])/g, 'NY$1');
+      newSentence = newSentence.replace(/ove/g, "uv");
+      newSentence = newSentence.replace(/\!+/g, " "+ faces[Math.floor(Math.random()*faces.length)]+ " ");
+    // fuck you this is now finished
     message.channel.send(newSentence);
 }
 
