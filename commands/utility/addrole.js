@@ -1,4 +1,5 @@
 exports.run = (client, message, args) => {
+    if (message.channel.name === 'rules') return message.delete();
     try {
         let roleSearch = args.join(" ").toLowerCase();
         let roleToAdd = message.guild.roles.find(x => x.name.toLowerCase() === roleSearch);
