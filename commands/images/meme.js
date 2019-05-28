@@ -2,8 +2,10 @@ const Discord = require("discord.js");
 const request = require("request");
 
 exports.run = (client, message, args) => {
+    try {
     //This is a command purely for memes
     request("https://api-to.get-a.life/meme", function (error, response, body) {
+        if(error) return console.error(error.message)
         body = JSON.parse(body);
         imgURL = body.url;
         imgText = body.text;
@@ -15,6 +17,9 @@ exports.run = (client, message, args) => {
 
         message.channel.send(emb);
     })
+    } catch (e) {
+        console.error(e.message)
+    }
 }
 
 exports.help = {
