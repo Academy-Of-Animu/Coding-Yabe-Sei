@@ -5,7 +5,8 @@ exports.run = (client, message, args) => {
     try {
     //This is a command purely for memes
     request("https://api-to.get-a.life/meme", function (error, response, body) {
-        if(error) return console.error(error.message)
+        if(error) return message.channel.send('Sorry, it appears an error has occurred fetching your meme!').then(() => console.error(error.message))
+        
         body = JSON.parse(body);
         imgURL = body.url;
         imgText = body.text;
