@@ -1,4 +1,5 @@
 # Coding-Yabe-Sei
+
 #### A multi-purpose discord bot that has, moderation, fun, games, and learning commands!
 
 ## [Invite](https://discordapp.com/oauth2/authorize?client_id=506254054339379220&scope=bot&permissions=8)
@@ -24,17 +25,21 @@ and many more
 We know it's not a lot but we'll try to add better games as soon as we get better hosting.
 
 ## Honorable mentions
+
 ##### - Translate:
 Yabe can translate any piece of text you provide from almost all languages you can think of, just do `yabe translate list` for a list of supported languages and their respective ISO-639-1 codes, and `yabe help translate` on how to use the command.
+
 ##### - Learn:
 Yabe has a learn command for learning concepts in various programming languages.
 This command is still a work-in-progress so it's doesn't work yet.
 
 ## Support
+
 ##### If you require assistance with anything, or have any questions about yabe you can make an issue on our [github here](https://github.com/Academy-Of-Animu/Coding-Yabe-Sei/issues), or join our [support server](https://discord.gg/bhZGHCm) and have a chat with the devs.
 
 ---
-# TO DO LIST
+
+## TO DO LIST
 
 - [x] Make a proper README.md (really this time :squint:)
 - [x] implement command handler
@@ -46,3 +51,11 @@ This command is still a work-in-progress so it's doesn't work yet.
   - [ ] games
   - [ ] music
   - [ ] random
+
+## Development
+
+1. Clone repository
+1. `npm install`
+1. Copy `.env-template` and rename to `.env`
+1. Fill out `.env`
+  - [Provision a testing application](https://discordapp.com/developers/applications/me)
