@@ -17,8 +17,8 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "engines": {
-        "node": "8.12.0",
-        "npm": "6.4.1"
+        "node": "10.16.0",
+        "npm": "6.10.0"
     },
     "keywords": [],
     "author": "Canny-Illusion-Senpai",
