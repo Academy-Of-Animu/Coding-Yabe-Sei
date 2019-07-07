@@ -11,16 +11,18 @@ client.commands = new Enmap();
 client.aliases = new Enmap();
 require("./utils.js")(client);
 
-const DBL = require("dblapi.js");
-const dbl = new DBL(process.env.DBL_TOKEN, client);
+if (process.env.PRODUCTION != 'false') {
+    const DBL = require("dblapi.js");
+    const dbl = new DBL(process.env.DBL_TOKEN, client);
 
-dbl.on('posted', () => {
-    console.log('Server count has been posted');
-});
+    dbl.on('posted', () => {
+        console.log('Server count has been posted');
+    });
 
-dbl.on('error', err => {
-    console.log(`${err}`);
-});
+    dbl.on('error', err => {
+        console.log(`${err}`);
+    });
+}
 
 const start = async () => {
     fs.readdir("./events/", (err, files) => {
