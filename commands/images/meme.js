@@ -1,25 +1,24 @@
 const Discord = require("discord.js");
 const request = require("request");
 
-exports.run = (client, message, args) => {
+exports.run = (client, message, _args) => {
     try {
     //This is a command purely for memes
-    request("https://api-to.get-a.life/meme", function (error, response, body) {
+    request("https://some-random-api.ml/meme", function (error, _response, body) {
         if(error) return message.channel.send('Sorry, it appears an error has occurred fetching your meme!').then(() => console.error(error.message))
-        
-        body = JSON.parse(body);
-        imgURL = body.url;
-        imgText = body.text;
+
+        const json = JSON.parse(body);
+        const { id, image, caption, category } = json;
 
         const emb = new Discord.RichEmbed();
-            emb.setDescription = imgText;
+            emb.setDescription(`${caption} - ${category} #${id}`);
             emb.setColor(client.config.embedColor);
-            emb.setImage(imgURL);
+            emb.setImage(image);
 
         message.channel.send(emb);
-    })
+    });
     } catch (e) {
-        console.error(e.message)
+        console.error(e.message);
     }
 }
 
