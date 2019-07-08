@@ -1,8 +1,8 @@
 const request = require("request");
 const Discord = require("discord.js");
-const config = require('../../library/configuration');
 
 exports.run = (client, message) => {
+    const { config } = client;
     const options = {
         url: "https://api.imgur.com/3/album/NXyuO/images",
         method: "GET",
