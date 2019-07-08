@@ -2,6 +2,8 @@
 
 #### A multi-purpose discord bot that has, moderation, fun, games, and learning commands!
 
+[![Build Status](https://travis-ci.org/Academy-Of-Animu/Coding-Yabe-Sei.svg?branch=master)](https://travis-ci.org/Academy-Of-Animu/Coding-Yabe-Sei)
+
 ## [Invite](https://discordapp.com/oauth2/authorize?client_id=506254054339379220&scope=bot&permissions=8)
 Here's the [Link](https://discordapp.com/oauth2/authorize?client_id=506254054339379220&scope=bot&permissions=8) to invite yabe to your server, she currently requires permissions that aren't really used, but we plan on making use of such perms.
 
