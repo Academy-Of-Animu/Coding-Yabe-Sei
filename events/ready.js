@@ -32,5 +32,12 @@ module.exports = async (client) => {
         .setFooter(cutiesR)
         .setColor(client.config.embedColor);
 
-    client.channels.get('531644078673100830').send(embed);
+    const channelId = '531644078673100830';
+    try {
+        const channel = await client.channels.get(channelId);
+        channel.send(embed);
+    }
+    catch(e) {
+        console.error(`Unable to find channel: ${channelId}`)
+    }
 };
