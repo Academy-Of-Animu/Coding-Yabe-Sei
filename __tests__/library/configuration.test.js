@@ -1,3 +1,4 @@
+jest.mock('dotenv');
 const config = require('../../library/configuration');
 const IsColor = require('../../library/isColor');
 
