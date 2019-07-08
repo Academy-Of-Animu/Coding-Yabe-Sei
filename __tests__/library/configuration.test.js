@@ -1,4 +1,5 @@
 const Configuration = require('../../library/configuration');
+const IsColor = require('../../library/isColor');
 
 describe('Configuration', () => {
 
@@ -15,6 +16,12 @@ describe('Configuration', () => {
       '428678912558628865'
     ];
     expect(devIds).toEqual(expectedIds);
+  });
+
+  test('embedColor is a color', () => {
+    const { embedColor } = Configuration;
+    const isColor = IsColor(embedColor);
+    expect(isColor).toEqual(true);
   });
 
 });
