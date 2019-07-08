@@ -3,6 +3,7 @@
 
 #ignore the heavy bois
 node_modules/
+coverage/
 
 #ignore db
 db/
