@@ -5,7 +5,7 @@ const descs = ["A big cutie!", "A small cutie!", "OwO whats this?", "UwU so ador
 
 exports.run = (client, message, _args) => {
     const baseUrl = "https://some-random-api.ml/img/";
-    const avail = ["dog", "cat", "panda", "red_panda", "birb", "fox", "koala", "pikachuimg"];
+    const avail = ["dog", "cat", "panda", "red_panda", "birb", "fox", "koala", "racoon", "kangaroo", "pikachuimg"];
     const anim = avail.random();
 
     request(baseUrl + anim, function (error, _response, body) {
