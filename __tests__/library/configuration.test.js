@@ -40,7 +40,7 @@ describe('Configuration', () => {
 
     describe('prefix', () => {
       test('default', () => {
-        expect(config.prefix).toEqual('yabe ');
+        expect(config.prefix).toEqual('yabe');
       });
       test('set', () => {
         const testPrefix = 'testPrefix ';

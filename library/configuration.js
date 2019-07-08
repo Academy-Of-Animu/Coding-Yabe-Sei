@@ -8,13 +8,13 @@ const Configuration = {
   imgurClientId: process.env.IMGUR_CLIENT_ID,
   osuToken: process.env.OSU_TOKEN,
 
-  prefix: process.env.PREFIX || 'yabe ',
+  prefix: process.env.PREFIX || 'yabe',
   devs: {
       canarado: '427491040468140043',
       illusion: '407351772575694879',
       senpai: '428678912558628865'
   },
-  devIds: [],
+  devIds: [], // IDE Autocomplete Placeholder for Generated Property
   useNewHelp: process.env.USE_NEW_HELP || 'true',
   embedColor: process.env.EMBED_COLOR || '0x1355A4',
   botVersion: packageJson.version,
@@ -23,6 +23,7 @@ const Configuration = {
   bugChannel: process.env.BUG_CHANNEL || '533714573031899156'
 };
 
+// Generated Properties
 Configuration.devIds = Object.values(Configuration.devs);
 
 module.exports = Configuration;
