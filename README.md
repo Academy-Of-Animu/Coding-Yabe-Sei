@@ -59,3 +59,4 @@ This command is still a work-in-progress so it's doesn't work yet.
 1. Copy `.env-template` and rename to `.env`
 1. Fill out `.env`
   - [Provision a testing application](https://discordapp.com/developers/applications/me)
+1. Visit `discordapp.com/oauth2/authorize?client_id=INSERT_CLIENT_ID_HERE&scope=bot&permissions=0`, replacing the placeholder with your real Client ID.
