@@ -1,6 +1,12 @@
 const packageJson = require('../package.json');
 
 const Configuration = {
+  botToken: process.env.BOT_TOKEN,
+  production: process.env.PRODUCTION,
+  dblToken: process.env.DBL_TOKEN,
+  imgurClientId: process.env.IMGUR_CLIENT_ID,
+  osuToken: process.env.OSU_TOKEN,
+
   prefix: "yabe ",
   devs: {
       canarado: "427491040468140043",

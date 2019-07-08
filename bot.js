@@ -5,15 +5,16 @@ const fs = require("fs");
 const klaw = require("klaw");
 const path = require("path");
 
+const config = require('./library/configuration');
 const client = new Discord.Client();
-client.config = require('./library/configuration');
+client.config = config;
 client.commands = new Enmap();
 client.aliases = new Enmap();
 require("./utils.js")(client);
 
-if (process.env.PRODUCTION != 'false') {
+if (config.production != 'false') {
     const DBL = require("dblapi.js");
-    const dbl = new DBL(process.env.DBL_TOKEN, client);
+    const dbl = new DBL(config.dblToken, client);
 
     dbl.on('posted', () => {
         console.log('Server count has been posted');
@@ -50,6 +51,6 @@ const start = async () => {
     });
     console.log('I am prepared to decimate them weebs with my otaku-desu status ÒwÓ');
 
-    client.login(process.env.BOT_TOKEN);
+    client.login(config.botToken);
 };
 start();

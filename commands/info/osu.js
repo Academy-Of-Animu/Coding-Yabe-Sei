@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const osu = require('node-osu');
+const config = require('../../library/configuration');
 
-var osuApi = new osu.Api(process.env.OSU_TOKEN);
+var osuApi = new osu.Api(config.osuToken);
 
 exports.run = (client, message, args) => {
     osuApi.getUser({ u: args.join(' ') }).then(user => {
