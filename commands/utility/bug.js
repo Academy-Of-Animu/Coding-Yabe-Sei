@@ -11,7 +11,8 @@ exports.run = (client, message, args) => {
         .setDescription(bug)
         .setColor(client.config.embedColor);
 
-    client.channels.get(config.bugChannel).send(embed);
+    client.channels.get(config.bugChannel).send(embed)
+        .catch(console.error);
 }
 
 exports.help = {

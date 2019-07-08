@@ -16,5 +16,8 @@ module.exports = (client) => {
         .setFooter('Whoever is seeing this, please check the heroku, thx')
         .setColor(client.config.embedColor);
 
-    client.channels.get(config.disconnectChannel).send(embed);
+    client.channels
+        .get(config.disconnectChannel)
+        .send(embed)
+        .catch(console.error);;
 }
