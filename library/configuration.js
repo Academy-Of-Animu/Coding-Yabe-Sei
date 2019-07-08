@@ -7,17 +7,17 @@ const Configuration = {
   imgurClientId: process.env.IMGUR_CLIENT_ID,
   osuToken: process.env.OSU_TOKEN,
 
-  prefix: "yabe ",
+  prefix: process.env.PREFIX || 'yabe ',
   devs: {
-      canarado: "427491040468140043",
-      illusion: "407351772575694879",
-      senpai: "428678912558628865"
+      canarado: '427491040468140043',
+      illusion: '407351772575694879',
+      senpai: '428678912558628865'
   },
   devIds: [],
-  useNewHelp: "true",
-  embedColor: "0x1355A4",
+  useNewHelp: process.env.USE_NEW_HELP || 'true',
+  embedColor: process.env.EMBED_COLOR || '0x1355A4',
   botVersion: packageJson.version,
-  logChannel: "516054347008966667"
+  logChannel: process.env.LOG_CHANNEL || '516054347008966667'
 };
 
 Configuration.devIds = Object.values(Configuration.devs);
