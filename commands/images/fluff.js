@@ -1,14 +1,14 @@
 const Discord = require("discord.js");
 const request = require("request");
 
-descs = ["A big cutie!", "A small cutie!", "OwO whats this?", "UwU so adorable...", "Literally shooketh", "if (this.isCute){die()}"];
+const descs = ["A big cutie!", "A small cutie!", "OwO whats this?", "UwU so adorable...", "Literally shooketh", "if (this.isCute){die()}"];
 
-exports.run = (client, message, args) => {
-    var url = "https://api-to.get-a.life/";
-    avail = ["dog", "cat", "panda", "redpanda", "birb", "fox"];
-    anim = avail[Math.floor(Math.random() * avail.length)];
+exports.run = (client, message, _args) => {
+    const baseUrl = "https://some-random-api.ml/img/";
+    const avail = ["dog", "cat", "panda", "red_panda", "birb", "fox", "koala", "pikachuimg"];
+    const anim = avail.random();
 
-    request(url + anim + "img", function (error, response, body) {
+    request(baseUrl + anim, function (error, _response, body) {
         if (error) {
             message.channel.send("Sorry something seems to have gone wrong!");
             console.log(error);
@@ -16,10 +16,10 @@ exports.run = (client, message, args) => {
         }
 
         body = JSON.parse(body);
-        imgURL = body.link;
+        const imgURL = body.link;
 
         const emb = new Discord.RichEmbed();
-            emb.setDescription = descs[Math.floor(Math.random() * avail.length)];
+            emb.setDescription = descs.random();
             emb.setColor(client.config.embedColor);
             emb.setImage(imgURL);
 
