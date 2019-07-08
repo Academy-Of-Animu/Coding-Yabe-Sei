@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
 
     if (canManageGuild || isDev) {
         let text = args.join(" ");
-        message.delete();
+        message.delete().catch(console.error);
         message.channel.send(text);
     } else {
         message.channel.send("Sorry, you lack permissions to use this command. ¯\\_(ツ)_/¯");
