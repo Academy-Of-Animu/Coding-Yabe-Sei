@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require('../library/configuration');
 
 module.exports = async (client) => {
     //const activitiesList = [`coding-yabe-sei.io`, `for ${client.users.size} users on ${client.guilds.size} servers`, `with the >help command`, `with the devs`]
@@ -32,7 +33,7 @@ module.exports = async (client) => {
         .setFooter(cutiesR)
         .setColor(client.config.embedColor);
 
-    const channelId = '531644078673100830';
+    const channelId = config.logChannel;
     try {
         const channel = await client.channels.get(channelId);
         channel.send(embed);

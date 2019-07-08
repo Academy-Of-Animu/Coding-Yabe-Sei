@@ -1,3 +1,4 @@
+require('dotenv').config();
 const packageJson = require('../package.json');
 
 const Configuration = {
