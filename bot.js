@@ -6,7 +6,7 @@ const klaw = require("klaw");
 const path = require("path");
 
 const client = new Discord.Client();
-client.config = require("./config.json");
+client.config = require('./library/configuration');
 client.commands = new Enmap();
 client.aliases = new Enmap();
 require("./utils.js")(client);
