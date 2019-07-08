@@ -86,6 +86,31 @@ describe('Configuration', () => {
       });
     });
 
+    describe('disconnectChannel', () => {
+      test('default', () => {
+        expect(config.disconnectChannel).toEqual('531654018909339650');
+      });
+      test('set', () => {
+        const newChannel = '123';
+        process.env.DISCONNECT_CHANNEL = newChannel;
+        const config = require('../../library/configuration');
+        expect(config.disconnectChannel).toEqual(newChannel);
+      });
+    });
+
+    describe('bugChannel', () => {
+      test('default', () => {
+        expect(config.bugChannel).toEqual('533714573031899156');
+      });
+      test('set', () => {
+        const newChannel = '123';
+        process.env.BUG_CHANNEL = newChannel;
+        const config = require('../../library/configuration');
+        expect(config.bugChannel).toEqual(newChannel);
+      });
+    });
+
+
   });
 
 });

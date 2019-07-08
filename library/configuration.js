@@ -18,7 +18,9 @@ const Configuration = {
   useNewHelp: process.env.USE_NEW_HELP || 'true',
   embedColor: process.env.EMBED_COLOR || '0x1355A4',
   botVersion: packageJson.version,
-  logChannel: process.env.LOG_CHANNEL || '516054347008966667'
+  logChannel: process.env.LOG_CHANNEL || '516054347008966667',
+  disconnectChannel: process.env.DISCONNECT_CHANNEL || '531654018909339650',
+  bugChannel: process.env.BUG_CHANNEL || '533714573031899156'
 };
 
 Configuration.devIds = Object.values(Configuration.devs);
