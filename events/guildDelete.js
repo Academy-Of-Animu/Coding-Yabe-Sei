@@ -11,5 +11,6 @@ module.exports = (client, guild) => {
         .setDescription(`**${guild.owner.user.username}#${guild.owner.user.discriminator}** is the owner of the guild.\nGuild has **${guild.members.size}** members.\n\n`)
         .setTimestamp();
 
-    client.channels.get(logChannel).send(embed);
+    client.channels.get(logChannel).send(embed)
+        .catch(console.error);
 }

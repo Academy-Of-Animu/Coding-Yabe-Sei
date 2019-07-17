@@ -1,13 +1,17 @@
 const Discord = require("discord.js");
 const osu = require('node-osu');
 
-var osuApi = new osu.Api(process.env.OSU_TOKEN);
+// Cached variables
+let osuApi;
 
 exports.run = (client, message, args) => {
+    const { config } = client;
+    osuApi = osuApi || new osu.Api(config.osuToken);
+
     osuApi.getUser({ u: args.join(' ') }).then(user => {
         //console.log(user)
         const embed = new Discord.RichEmbed()
-            .setColor(client.config.embedColor)
+            .setColor(config.embedColor)
             .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Osu%21Logo_%282015%29.png/600px-Osu%21Logo_%282015%29.png")
             .setAuthor(`${user.name} (${user.id})`, `https://a.ppy.sh/${user.id}`, `https://osu.ppy.sh/users/${user.id}`)
             .setDescription(`User Stats as of ${new Date().toLocaleString()}`)

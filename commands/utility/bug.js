@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
+    const { config } = client;
     let bugText = args.join(" ");
     if (!bugText) return message.reply("I can't send an empty bug report!");
     message.reply("Thank you for submitting a bug, hopefully it won't require major surgery :grimacing:");
@@ -10,7 +11,8 @@ exports.run = (client, message, args) => {
         .setDescription(bug)
         .setColor(client.config.embedColor);
 
-    client.channels.get('533714573031899156').send(embed);
+    client.channels.get(config.bugChannel).send(embed)
+        .catch(console.error);
 }
 
 exports.help = {

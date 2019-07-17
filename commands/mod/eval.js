@@ -1,7 +1,10 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
-	if ((message.author.id == client.config.devs.canarado) || (message.author.id == client.config.devs.senpai) || (message.author.id == client.config.devs.illusion)) { //return message.channel.send('Nope.');
+	const { config } = client;
+	const isDev = config.devIds.includes(message.author.id);
+
+	if (isDev) { //return message.channel.send('Nope.');
 
 		const clean = text => {
 			if (typeof (text) === "string")

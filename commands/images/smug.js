@@ -2,11 +2,12 @@ const request = require("request");
 const Discord = require("discord.js");
 
 exports.run = (client, message) => {
+    const { config } = client;
     const options = {
         url: "https://api.imgur.com/3/album/NXyuO/images",
         method: "GET",
         headers: {
-            "Authorization": `Client-ID ${process.env.IMGUR_CLIENT_ID}`,
+            "Authorization": `Client-ID ${config.imgurClientId}`,
         }
     };
 

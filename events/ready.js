@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = async (client) => {
+    const { config } = client;
     //const activitiesList = [`coding-yabe-sei.io`, `for ${client.users.size} users on ${client.guilds.size} servers`, `with the >help command`, `with the devs`]
     await client.wait(2000);
     // Discords API can take upt to 2-5 seconds to be fully ready. This makes sure the bot doesn't fo any of the following code before that.
@@ -30,7 +31,14 @@ module.exports = async (client) => {
         .setTitle('I just restarted dads!')
         .setTimestamp()
         .setFooter(cutiesR)
-        .setColor(client.config.embedColor);
+        .setColor(config.embedColor);
 
-    client.channels.get('531644078673100830').send(embed);
+    const channelId = config.logChannel;
+    try {
+        const channel = await client.channels.get(channelId);
+        channel.send(embed);
+    }
+    catch(e) {
+        console.error(`Unable to find channel: ${channelId}`)
+    }
 };

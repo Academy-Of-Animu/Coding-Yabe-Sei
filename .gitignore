@@ -3,9 +3,7 @@
 
 #ignore the heavy bois
 node_modules/
-
-#ignore the heavy boi vindicator
-package-lock.json
+coverage/
 
 #ignore db
 db/
