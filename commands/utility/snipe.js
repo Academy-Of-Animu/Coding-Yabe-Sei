@@ -2,13 +2,9 @@ const Discord = require('discord.js')
 
 exports.run = (client, message, args) => {
     let snipe = client.snipeMap.get(message.guild.id)
-    if(!snipe) return message.channel.send('Could not find a message that was deleted.'.embedify())
+    if(!snipe) return message.channel.send(new Discord.RichEmbed().setColor(client.config.embedColor).setDescription('Could not find a message that was deleted.'));
 
-    return message.channel.send(`Message: ${snipe.content}\n\nAuthor: <@${snipe.author.id}>`.embedify())
-    
-    String.prototype.embedify = function() {
-        return new Discord.RichEmbed().setColor(client.config.embedColor).setDescription(this)
-    }
+    return message.channel.send(new Discord.RichEmbed().setColor(client.config.embedColor).setDescription(`Message: ${snipe.content}\n\nAuthor: <@${snipe.author.id}>`));
 
 }
 
