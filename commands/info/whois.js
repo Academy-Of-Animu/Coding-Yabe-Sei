@@ -31,6 +31,7 @@ exports.run = (client, message, args) => {
 			};
 
 			emb.addField(`Who is ${name}`, memberUsers);
+			emb.setFooter(`${memberNames.length} users have this role.`)
 			message.channel.send(emb);
 		};
 
