@@ -22,6 +22,7 @@ exports.run = (client, message, args) => {
 				let embed = new Discord.RichEmbed()
 					.setDescription(`Too many users to display: ${memberNames.length} users.`)
 					.setColor(client.config.embedColor)
+					
 
 				message.channel.send(embed)
 				return
@@ -31,6 +32,8 @@ exports.run = (client, message, args) => {
 			};
 
 			emb.addField(`Who is ${name}`, memberUsers);
+			emb.setFooter(`${members.length} users have that role.`, 
+				      `https://cdn.discordapp.com/avatars/506254054339379220/43bf326b32048c7c0f976c2ba2108c4c.png?size=2048`);
 			message.channel.send(emb);
 		};
 
