@@ -7,7 +7,9 @@ exports.run = (client, message, args) => {
         if (!roleSearch)
             return message.reply('Gimmie a role ya big silly');
 
-        if (roleToAdd == undefined)
+        if (roleToAdd == undefined && roleSearch.match(/<|>/gm))
+            roleToAdd = message.guild.roles.find(x => x.name.toLowerCase() === roleSearch.replace(/<|>/gm, ""));
+        else if (roleToAdd == undefined)
             return message.reply(`Unfortunately that role, **${roleSearch}**, does not exist`);
 
         if (message.member.roles.has(roleToAdd.id))
