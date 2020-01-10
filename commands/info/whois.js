@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
 	try {
-		let maxUsersToDisplay = 2;
+		let maxUsersToDisplay = 50;
 
 		let roles = message.guild.roles;
 		let roleKeys = roles.keyArray();
