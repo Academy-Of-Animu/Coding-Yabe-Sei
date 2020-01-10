@@ -6,17 +6,17 @@ exports.run = (client, message, args) => {
 
 		let roles = message.guild.roles;
 		let roleKeys = roles.keyArray();
-	
+
 		let sendEmbed = (name, role) => {
 			let memberNames = [];
-	
+
 			let roleKeys = role.keyArray()
 			roleKeys.forEach(key => memberNames.push(role.get(key)));
-	
+
 			let emb = new Discord.RichEmbed();
-	
+
 			emb.setColor(client.config.embedColor);
-	
+
 			let memberUsers = "";
 			let moreThanMax = false;
 			let memberCount = memberNames.length;
@@ -33,12 +33,12 @@ exports.run = (client, message, args) => {
 
 			if(moreThanMax)
 				memberUsers += "...";
-	
+
 			emb.addField(`Who is ${name}:`, memberUsers);
 			emb.setFooter(`${memberCount} users have this role${tooManyText}.`)
 			message.channel.send(emb);
 		};
-	
+
 		roleKeys.forEach(key => {
 			let role = roles.get(key);
 			let name = role.name;
