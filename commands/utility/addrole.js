@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
                 console.error;
                 message.react('❎');
                 if (error == "DiscordAPIError: Missing Permissions")
-                    return message.reply(`You lack the power to gain a role as noble as ${roleToAdd}`);
+                    return message.reply(`You lack the power to gain a role as noble as \`${roleToAdd.name || roleToAdd}\``);
                 else
                     return message.reply(`Unexpected error | ${error}`);
             })
